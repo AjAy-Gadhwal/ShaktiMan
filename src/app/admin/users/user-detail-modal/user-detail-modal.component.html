@@ -1,0 +1,151 @@
+<!-- <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div> -->
+<div class="modal-body user-detail-modal-body">
+    <button type="button" class="btn btn-outline-danger btn-sm modal-close-btn" (click)="activeModal.close('Close click')">
+        <span class="material-icons-outlined">
+            close
+        </span>
+    </button>
+
+    <div class="row h-100">
+        <div class="col-12 col-md-4 text-center d-flex flex-column justify-content-center align-items-center profile-container">
+            <div class="rounded-circle img-thumbnail profile-img">
+                <div class="img-view-modal rounded-circle" *ngIf="user?.avatar" (click)="opneImgLightboxModal(user?.avatar)">
+                    <img [src]="user?.avatar" class="rounded-circle w-100 h-100" (error)="user.avatar=''" >
+                </div>
+                <div *ngIf="!user?.avatar" class="rounded-circle bg-secondary w-100 h-100 d-flex justify-content-center align-items-center fs-1 text-light" >
+                    {{user?.firstName | firstCharacter | uppercase}}
+                </div>                                        
+            </div>
+            <div class="fs-5 mt-2" >
+                <b>{{user?.firstName | titlecase}} {{user?.lastName | titlecase}}</b>
+            </div>                                   
+        </div>
+
+        <div class="col-12 col-md-8 text-center px-3 px-lg-5">                                
+            <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                <div class="icon">
+                    <i class="fas fa-at fa-fw me-2 mt-1"></i>
+                </div> 
+                <span>{{user?.email}}</span>
+            </div>  
+            
+            <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                <div class="icon">
+                    <i class="fab fa-instagram fa-fw me-2 mt-1"></i>
+                </div>
+                <span>{{user?.instagramHandle}} ({{user?.instagramFollowers | numberSuffix }} Followers)</span>
+            </div>                                                                                        
+
+            <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                <div class="icon">
+                    <i class="fas fa-birthday-cake fa-fw me-2 mt-1"></i>
+                </div> 
+                <span>{{user?.birthDate | date}}</span>
+            </div>
+
+            <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                <div class="icon">
+                    <i class="fas fa-venus-mars fa-fw me-2 mt-1"></i>
+                </div> 
+                <span>{{user?.gender}}</span>
+            </div>      
+            
+            <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                <div class="icon">
+                    <i class="far fa-heart fa-fw me-2 mt-1"></i>
+                </div> 
+                <span>{{user?.interests}}</span>
+            </div> 
+
+            <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                <div class="icon">
+                    <i class="fas fa-tasks fa-fw me-2 mt-1"></i>
+                </div> 
+                <span>Takened {{user?.tasks?.length || 0}} tasks</span>
+            </div> 
+            
+            <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                <div class="icon">
+                    <i class="fas fa-piggy-bank fa-fw me-2 mt-1"></i>
+                </div> 
+                <span>Balances {{userBalance?.totalBalance || 0}} (include canceled balance)</span>                                 
+            </div> 
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.earnedBalance" [reward]="user.earnedBalance" type="success" label="Earned" ></app-circular-progress-bar>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.currentBalance" [reward]="user.currentBalance" type="warning" label="Current" ></app-circular-progress-bar>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.pendingBalance" [reward]="user.pendingBalance" type="info" label="Pending" ></app-circular-progress-bar>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.cancelBalance" [reward]="user.cancelBalance" type="danger" label="Cancel" ></app-circular-progress-bar>
+                </div>
+            </div>               
+        </div>
+
+        <div class="col-12 mt-4">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Screen Shot</th>                            
+                            <th scope="col">Shop</th>
+                            <th scope="col">Task type</th>
+                            <th scope="col">Reward/Views</th>
+                            <th scope="col">Taken On</th>
+                            <th scope="col">Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="tasks.length > 0" >
+                        <tr *ngFor="let task of tasks; trackBy:trackById; let i=index">
+                            <th scope="row">{{i + 1}}</th>
+                            <td>{{task?.id?.title}}</td>
+                            <td>
+                                <div class="img-view-modal" *ngIf="task?.screenShot" (click)="opneImgLightboxModal(backendUrl + task?.screenShot)">
+                                    <img [src]="backendUrl + task?.screenShot" class="img-thumbnail task-screen-shot" (error)="task.screenShot=''" >
+                                </div>
+                                <img src="assets/img/default-image.png" *ngIf="!task?.screenShot" class="img-thumbnail task-screen-shot" >
+                            </td>
+                            <td>{{task?.id?.shop?.name}} ({{task?.id?.shop?.type}})</td>
+                            <td>{{task?.id?.type}}</td>
+                            <td>${{task?.id?.reward}} on {{task?.id?.rewardOnViews}}</td>
+                            <td>{{task?.takenDate | date}}</td>
+                            <td>
+                                <div class="btn-group payment-btn-group" *ngIf="task?.status === 'Pending'" >
+                                    <button type="button" class="btn btn-sm btn-outline-success" (click)="taskPayment(task?.id?._id, true)" >
+                                        <i class="fas fa-check fa-fw"></i> 
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="taskPayment(task?.id?._id, false)" >
+                                        <i class="fas fa-times fa-fw"></i> 
+                                    </button>
+                                </div>    
+                                <div *ngIf="task?.status !== 'Pending'" [ngClass]="{'text-success': task?.status === 'Approved', 'text-danger': task?.status === 'Canceled'}" >
+                                    {{task?.status}}
+                                </div>                            
+                            </td>
+                        </tr>                    
+                    </tbody>
+                    <tbody *ngIf="tasks.length === 0" >
+                        <tr>
+                            <td colspan="7" class="text-center" >No Task Taken</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+        
+        <div class="col-12 mt-3 text-end">
+            <button type="button" class="btn btn-outline-success" [disabled]="user.currentBalance === 0" (click)="opnePaymentModal()" ngbAutofocus>Pay (maximum ${{user.currentBalance}})</button>            
+        </div>
+    </div>            
+</div>

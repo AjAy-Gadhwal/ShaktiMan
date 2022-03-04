@@ -1,0 +1,299 @@
+<div class="container-fluid users">
+    <div class="row d-flex justify-content-start">
+        <div class="d-flex flex-wrap justify-content-start card-container">
+            <div class="mx-3 d-flex justify-content-end w-100" >
+                <button
+                    type="button"
+                    class="btn btn-sm add-btn d-flex justify-content-between align-items-center ms-auto"
+                    [ngClass]="isAddSectionOpen ? 'btn-outline-danger close': 'btn-outline-success'"
+                    (click)="resetForm(); isAddSectionOpen = !isAddSectionOpen"
+                >
+                    <span class="me-2">{{isAddSectionOpen ? 'Close' : 'Add'}} User</span>
+                    <span class="material-icons-outlined add-close-icon fs-2">add</span>
+                </button>
+            </div> 
+
+            <div class="card add-card noselect m-3" *ngIf="isAddSectionOpen" [@slideInOut]>
+                <div class="card-body">
+                    <form appInvalidFormFocus id="userForm" [formGroup]="userForm" *ngIf="userForm" (submit)="submit()" autocomplete="off" class="row">                    
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="firstName" class="form-label">First name</label>
+                                <input type="text" formControlName="firstName" id="firstName" class="form-control" required minlength="3" maxlength="100" trim="blur" >
+    
+                                <div *ngIf="isFormSubmittedAndError('firstName')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('firstName', 'required')">First name is required.</ng-container>
+                                    <ng-container *ngIf="isFormSubmittedAndError('firstName', 'minlength', ['required'])">First name minimum 3 characters.</ng-container>
+                                </div>
+                            </div>
+                        </div>   
+                        
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="lastName" class="form-label">Last name</label>
+                                <input type="text" formControlName="lastName" id="lastName" class="form-control" required minlength="3" maxlength="100" trim="blur" >
+    
+                                <div *ngIf="isFormSubmittedAndError('lastName')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('lastName', 'required')">Last name is required.</ng-container>
+                                    <ng-container *ngIf="isFormSubmittedAndError('lastName', 'minlength', ['required'])">Last name minimum 3 characters.</ng-container>
+                                </div>
+                            </div>
+                        </div>  
+                        
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" formControlName="email" id="email" class="form-control" required minlength="3" maxlength="100" trim="blur" >
+    
+                                <div *ngIf="isFormSubmittedAndError('email')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('email', 'required')">Email is required.</ng-container>
+                                    <ng-container *ngIf="isFormSubmittedAndError('email', 'minlength', ['required'])">Email minimum 3 characters.</ng-container>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="zipCode" class="form-label">Zip or Postal Code</label>
+                                <input type="text" formControlName="zipCode" id="zipCode" class="form-control" required minlength="5" maxlength="7" trim="blur" >
+    
+                                <div *ngIf="isFormSubmittedAndError('zipCode')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('zipCode', 'required')">Zip / Postal code is required.</ng-container>
+                                    <ng-container *ngIf="isFormSubmittedAndError('zipCode', 'isNumber', ['required'])">Zip / Postal code is digit only.</ng-container>
+                                    <ng-container *ngIf="isFormSubmittedAndError('zipCode', 'minlength', ['required', 'isNumber'])">Zip / Postal code is minimum 5 digit.</ng-container>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="instagramHandle" class="form-label">Instagram Handle</label>
+                                <input type="text" formControlName="instagramHandle" id="instagramHandle" class="form-control" required trim="blur" >
+    
+                                <div *ngIf="isFormSubmittedAndError('instagramHandle')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('instagramHandle', 'required')">Instagram handle is required.</ng-container>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="instagramFollowers" class="form-label">Instagram Followers</label>
+                                <input type="text" formControlName="instagramFollowers" id="instagramFollowers" class="form-control" required trim="blur" >
+    
+                                <div *ngIf="isFormSubmittedAndError('instagramFollowers')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('instagramFollowers', 'required')">Instagram followers is required.</ng-container>
+                                    <ng-container *ngIf="isFormSubmittedAndError('instagramFollowers', 'isNumber', ['required'])">Instagram followers is digit only.</ng-container>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="birthDate" class="form-label">Date of birth</label>
+                                <div class="input-group textbox-size mb-3" formGroupName="birthDate" >
+                                    <select class="form-select" formControlName="month" required (change)="applyDayValidation()" >
+                                        <option selected disabled hidden value="">Month</option>
+                                        <option *ngFor="let month of birthDateOption.months" [value]="month">{{month}}</option>
+                                    </select>
+    
+                                    <select class="form-select" formControlName="day" required (change)="applyDayValidation()" >
+                                        <option selected disabled hidden value="">Day</option>
+                                        <option *ngFor="let day of birthDateOption.days" [value]="day">{{day}}</option>
+                                    </select>
+    
+                                    <select class="form-select" formControlName="year" required  (change)="applyDayValidation()" >
+                                        <option selected disabled hidden value="">Year</option>
+                                        <option *ngFor="let year of birthDateOption.years" [value]="year">{{year}}</option>
+                                    </select>
+    
+                                    <div *ngIf="userForm?.get('birthDate')?.touched && userForm?.get('birthDate')?.invalid" class="invalid-feedback">
+                                        Please enter valid date of birth.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select class="form-select" formControlName="gender" required >
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+    
+                                <div *ngIf="isFormSubmittedAndError('gender')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('gender', 'required')">Gender is required.</ng-container>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        <div class="col-12 col-sm-6 col-md-4" >
+                            <div class="form-group noLabel mb-3 w-100">
+                                <label for="interests" class="form-label">Interests</label>
+                                <ng-select bindLabel="interests" formControlName="interests" appendTo="body" [multiple]="true" [clearable]="false" [closeOnSelect]="false" [searchable]="false" class="form-select p-0 custom-ng-select" >
+                                    <ng-option *ngFor="let interest of interestOptions" [value]="interest">{{interest}}</ng-option>
+                                </ng-select>
+
+                                <div *ngIf="isFormSubmittedAndError('interests')" class="invalid-feedback">
+                                    <ng-container *ngIf="isFormSubmittedAndError('interests', 'required')">Interest is required.</ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="card-footer">                    
+                    <button type="submit" class="btn btn-minfluence btn-lg w-100" [appBtnLoader]="isSubmited?.value" form="userForm" >Submit</button>                                                
+                </div>
+            </div>
+        </div>        
+        
+        <div class="d-flex flex-wrap justify-content-evenly align-items-stretch card-container pt-3" >            
+            <div class="d-flex flex-wrap justify-content-between w-100">                       
+                <div class="per-page mx-3 mb-4 d-flex justify-content-start align-items-center" >                 
+                    <select class="form-select me-3" [formControl]="perPage" >
+                        <option [ngValue]="3">3</option>
+                        <option [ngValue]="6">6</option>
+                        <option [ngValue]="9">9</option>
+                        <option [ngValue]="12">12</option>
+                        <option [ngValue]="15">15</option>
+                        <option [ngValue]="18">18</option>
+                        <option [ngValue]="21">21</option>
+                    </select>
+                    Per page users
+                </div>            
+    
+                <div class="input-group search-box mx-3 mb-4">
+                    <input class="form-control" type="text" [formControl]="search" placeholder="Search user" />
+                    <button class="btn btn-minfluence" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>            
+            </div>            
+
+            <ng-container *ngIf="users?.data?.length > 0 && users?.isLoading === false">
+                <div class="card data-card noselect mx-3 mb-5" *ngFor="let user of users?.data; trackBy:trackById" >
+                    <div class="card-body">                            
+                        <div class="row h-100">
+                            <div class="col-4 text-center border-end d-flex flex-column justify-content-center align-items-center">
+                                <div class="rounded-circle img-thumbnail profile-img">
+                                    <div class="img-view-modal rounded-circle" *ngIf="user?.avatar" (click)="opneImgLightboxModal(user?.avatar)">
+                                        <img [src]="user?.avatar" class="rounded-circle w-100 h-100" (error)="user.avatar=''" >
+                                    </div>
+                                    <div *ngIf="!user?.avatar" class="rounded-circle bg-secondary w-100 h-100 d-flex justify-content-center align-items-center fs-1 text-light" >
+                                        {{user?.firstName | firstCharacter | uppercase}}
+                                    </div>                                        
+                                </div>
+                                <div class="fs-5 mt-2" >
+                                    <b>{{user?.firstName | titlecase}} {{user?.lastName | titlecase}}</b>
+                                </div>                                   
+                            </div>
+
+                            <div class="col-8 text-center">                                
+                                <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                                    <div class="icon">
+                                        <i class="fas fa-at fa-fw me-2 mt-1"></i>
+                                    </div> 
+                                    <div class="text-break" >{{user?.email || '---'}}</div>
+                                </div>  
+                                
+                                <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                                    <div class="icon">
+                                        <i class="fab fa-instagram fa-fw me-2 mt-1"></i>
+                                    </div>
+                                    <div>{{user?.instagramHandle}} ({{user?.instagramFollowers | numberSuffix }} Followers)</div>
+                                </div>                                                                                        
+
+                                <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                                    <div class="icon">
+                                        <i class="fas fa-birthday-cake fa-fw me-2 mt-1"></i>
+                                    </div> 
+                                    <div>{{(user?.birthDate | date) || '---'}}</div>
+                                </div>
+
+                                <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                                    <div class="icon">
+                                        <i class="fas fa-venus-mars fa-fw me-2 mt-1"></i>
+                                    </div> 
+                                    <div>{{user?.gender || '---'}}</div>
+                                </div>      
+                                
+                                <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                                    <div class="icon">
+                                        <i class="far fa-heart fa-fw me-2 mt-1"></i>
+                                    </div> 
+                                    <div>{{user?.interests?.length > 0 ? user?.interests : '---'}}</div>
+                                </div> 
+
+                                <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                                    <div class="icon">
+                                        <i class="fas fa-tasks fa-fw me-2 mt-1"></i>
+                                    </div> 
+                                    <div>Takened {{user?.tasks?.length || 0}} tasks</div>
+                                </div> 
+                                
+                                <div class="text-muted text-start fs-6 d-flex details-with-icon">
+                                    <div class="icon">
+                                        <i class="fas fa-piggy-bank fa-fw me-2 mt-1"></i>
+                                    </div> 
+
+                                    <div class="d-flex flex-column w-100" >
+                                        <span class="w-100" >Balances</span>
+                                        <div class="d-flex flex-wrap w-100 balances" >
+                                            <div class="d-flex w-50" >
+                                                <span class="balance-title" >Earned</span>
+                                                <span class="me-2" >:</span>
+                                                <span>{{user?.earnedBalance || 0}}</span>                                                 
+                                            </div>
+
+                                            <div class="d-flex w-50" >
+                                                <span class="balance-title" >Current</span>
+                                                <span class="me-2" >:</span>
+                                                <span>{{user?.currentBalance || 0}}</span>                                                 
+                                            </div>
+
+                                            <div class="d-flex w-50" >
+                                                <span class="balance-title" >Pending</span>
+                                                <span class="me-2" >:</span>
+                                                <span>{{user?.pendingBalance || 0}}</span>                                                 
+                                            </div>
+
+                                            <div class="d-flex w-50" >
+                                                <span class="balance-title" >Cancel</span>
+                                                <span class="me-2" >:</span>
+                                                <span>{{user?.cancelBalance || 0}}</span>                                                 
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+                            </div>
+                        </div>                        
+                    </div>
+    
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-lg btn-outline-success w-100 edit" (click)="editForm(user)" >
+                            <i class="far fa-edit me-2"></i> Edit
+                        </button>
+                        <button type="button" class="btn btn-lg btn-outline-primary w-100 rounded-0" (click)="deatailRecord(user)" >
+                            <i class="far fa-money-bill-alt me-2"></i> Pay
+                        </button>
+                        <button type="button" class="btn btn-lg btn-outline-danger w-100 delete" (click)="deleteRecord(user?._id)" >
+                            <i class="far fa-trash-alt me-2"></i> Delete
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-100 d-flex justify-content-between mx-3 mb-4" *ngIf="documents.value > 0" >
+                    <div>Showing {{(page.value - 1) * perPage.value || 1}} to {{((page.value * perPage.value) > documents.value) ? documents.value : (page.value * perPage.value)}} of {{documents.value}} users</div>
+                    <ngb-pagination [page]="page.value" [collectionSize]="documents.value" [pageSize]="perPage.value" (pageChange)="page.setValue($event)" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" ></ngb-pagination>                            
+                </div>
+            </ng-container>                       
+
+            <div class="card noselect loading-and-no-data-card mx-3 mb-4" *ngIf="users?.data?.length === 0 || users?.isLoading === true">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <img [src]="users?.isLoading ? 'assets/img/loading.jpg' : 'assets/img/no-data.jpg'" alt="" srcset="">
+                    <div class="mb-5" >{{users?.isLoading ? 'Loading Data' : 'Data Not Found'}}</div>
+                </div>
+            </div>            
+        </div>
+    </div>    
+</div>

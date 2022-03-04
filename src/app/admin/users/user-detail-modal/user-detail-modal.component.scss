@@ -1,0 +1,33 @@
+.user-detail-modal-body {    
+    .profile-container {
+        border-right: 1px solid #dee2e6 !important;
+
+        @media (max-width: 767.98px) {
+            border-right: 0px !important;
+            padding-bottom: 1rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+
+            @media (min-width: 992px) {
+                width: 210px;
+                height: 210px;
+            }
+
+            @media (max-width: 767.98px) {
+                width: 210px;
+                height: 210px;
+            }
+
+            div {
+                font-size: 60px !important;
+            }
+        }
+    }
+    
+    .task-screen-shot {
+        height: 40px;
+    }
+}

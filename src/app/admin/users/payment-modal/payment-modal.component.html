@@ -1,0 +1,48 @@
+<div class="modal-body payment-modal-body">
+    <button type="button" class="btn btn-outline-danger btn-sm modal-close-btn" (click)="activeModal.close('Close click')">
+        <span class="material-icons-outlined">
+            close
+        </span>
+    </button>
+
+    <div class="row h-100">        
+        <div class="col-12 d-flex justify-content-center align-items-center pt-5">
+            <form appInvalidFormFocus id="paymentForm" [formGroup]="paymentForm" *ngIf="paymentForm" (submit)="submit()" autocomplete="off" class="row">                    
+                <div class="form-group noLabel mb-3 w-100">
+                    <label for="pay" class="form-label">Pay</label>
+                    <input type="number" formControlName="pay" id="pay" class="form-control" required min="1" [max]="user?.currentBalance" trim="blur" aria-describedby="payHelp" >
+                    <div id="payHelp" *ngIf="!isFormSubmittedAndError('pay')" class="form-text">Maximum ${{user?.currentBalance || 1}} allow</div>
+
+                    <div *ngIf="isFormSubmittedAndError('pay')" class="invalid-feedback">
+                        <ng-container *ngIf="isFormSubmittedAndError('pay', 'required')">Pay is required.</ng-container>
+                        <ng-container *ngIf="isFormSubmittedAndError('pay', 'isDecimal', ['required'])">Pay is digit only.</ng-container>
+                        <ng-container *ngIf="isFormSubmittedAndError('pay', 'min', ['required', 'isDecimal'])">Pay minimum 1 dollar.</ng-container>
+                        <ng-container *ngIf="isFormSubmittedAndError('pay', 'max', ['required', 'isDecimal', 'min'])">Pay maximum {{user?.currentBalance || 1}} dollar.</ng-container>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center align-items-center pt-3 pb-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.earnedBalance" [reward]="user.earnedBalance" type="success" label="Earned" ></app-circular-progress-bar>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.currentBalance" [reward]="user.currentBalance" type="warning" label="Current" ></app-circular-progress-bar>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.pendingBalance" [reward]="user.pendingBalance" type="info" label="Pending" ></app-circular-progress-bar>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center">
+                    <app-circular-progress-bar [percentage]="userBalance.cancelBalance" [reward]="user.cancelBalance" type="danger" label="Cancel" ></app-circular-progress-bar>
+                </div>
+            </div>            
+        </div>
+        
+        <div class="col-12 mt-3 d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-dark"  (click)="openUserDetailModal()" ngbAutofocus>Back</button>            
+            <button type="submit" class="btn btn-outline-success" [appBtnLoader]="isSubmited?.value" form="paymentForm" ngbAutofocus>Pay {{pay.value > 0 ? '$'+pay.value : ''}}</button>       
+        </div>
+    </div>            
+</div>
