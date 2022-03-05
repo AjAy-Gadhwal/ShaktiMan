@@ -9,7 +9,7 @@ import { OwlOptions } from "ngx-owl-carousel-o";
 })
 export class ShopsComponent implements OnInit {
 
-  customOptions: OwlOptions = {
+  carouselSlideOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,

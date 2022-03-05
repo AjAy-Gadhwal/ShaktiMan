@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', event => {
             });
         };
     
-        document.getElementById('loader').style.display = "none";
+        // document.getElementById('loader').style.display = "none";
     }, 1000);
 });
 

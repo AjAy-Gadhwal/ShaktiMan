@@ -1,64 +1,90 @@
 <div class="shops d-flex w-100">
     <div class="left-panel" >
-        <owl-carousel-o [options]="customOptions" class="owl-carousel-casino" >
-            <ng-template carouselSlide>
-                <img src="../../../assets/images/casino.png" alt="">
-            </ng-template>
-            <ng-template carouselSlide>
-                <img src="../../../assets/images/casino.png" alt="">
-            </ng-template>
-            <ng-template carouselSlide>
-                <img src="../../../assets/images/casino.png" alt="">
-            </ng-template>
-            <ng-template carouselSlide>
-                <img src="../../../assets/images/casino.png" alt="">
-            </ng-template>                    
-        </owl-carousel-o>  
-    
-        <div class="carousel-tabs" >
-            <div class="tab" >
-                <div class="area" >
-                    <div class="title" >Free Bet Club</div>
-                    <div class="description" >Free Bet Club</div>
+        <div class="carousel-and-tabs" >
+            <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-casino" >
+                <ng-template carouselSlide>
+                    <img src="../../../assets/images/casino.png" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img src="../../../assets/images/casino.png" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img src="../../../assets/images/casino.png" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img src="../../../assets/images/casino.png" alt="">
+                </ng-template>                    
+            </owl-carousel-o>  
+        
+            <div class="carousel-tabs" >
+                <div class="tab" >
+                    <div class="area" >
+                        <div class="title" >Free Bet Club</div>
+                        <div class="description" >Free Bet Club</div>
+                    </div>
                 </div>
+        
+                <div class="tab" >
+                    <div class="area" >
+                        <div class="title" >Free Bet Club</div>
+                        <div class="description" >Free Bet Club</div>
+                    </div>
+                </div>
+        
+                <div class="tab" >
+                    <div class="area" >
+                        <div class="title" >Free Bet Club</div>
+                        <div class="description" >Free Bet Club</div>
+                    </div>
+                </div>
+        
+                <div class="tab" >
+                    <div class="area" >
+                        <div class="title" >Free Bet Club</div>
+                        <div class="description" >Free Bet Club</div>
+                    </div>
+                </div>            
             </div>
-    
-            <div class="tab" >
-                <div class="area" >
-                    <div class="title" >Free Bet Club</div>
-                    <div class="description" >Free Bet Club</div>
-                </div>
-            </div>
-    
-            <div class="tab" >
-                <div class="area" >
-                    <div class="title" >Free Bet Club</div>
-                    <div class="description" >Free Bet Club</div>
-                </div>
-            </div>
-    
-            <div class="tab" >
-                <div class="area" >
-                    <div class="title" >Free Bet Club</div>
-                    <div class="description" >Free Bet Club</div>
-                </div>
-            </div>            
+        </div>
+
+        <div class="d-flex d-md-none carousel-cards w-100 mb-3" >                
+            <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-score-cards w-100" >
+                <ng-template carouselSlide>
+                    <app-score-card></app-score-card>
+                </ng-template>
+                
+                <ng-template carouselSlide>
+                    <app-score-card></app-score-card>
+                </ng-template>
+
+                <ng-template carouselSlide>
+                    <app-score-card></app-score-card>
+                </ng-template>
+
+                <ng-template carouselSlide>
+                    <app-score-card></app-score-card>
+                </ng-template>
+
+                <ng-template carouselSlide>
+                    <app-score-card></app-score-card>
+                </ng-template>
+            </owl-carousel-o>
         </div>
 
         <div class="sub-nav">
-            <div class="nav-btn" >
+            <div class="nav-btn d-flex justify-content-center align-items-center" >
                 <button class="btn sm-angel-btn active" routerLink="/today" routerLinkActive="sm-angel-btn active" >
                     Today
                 </button>
             </div>
 
-            <div class="nav-btn" >
+            <div class="nav-btn d-flex justify-content-center align-items-center" >
                 <button class="btn" routerLink="/tomorrow" routerLinkActive="sm-angel-btn active" >
                     Tomorrow
                 </button>
             </div>
 
-            <div class="nav-btn" >
+            <div class="nav-btn d-none d-sm-flex justify-content-center align-items-center" >
                 <button class="btn" routerLink="/inplay" routerLinkActive="sm-angel-btn active" >
                     Inplay
                 </button>
@@ -75,7 +101,7 @@
             </a>
         </div>
 
-        <div class="d-none d-sm-flex justify-content-center flex-wrap mt-4 pb-5 match-cards" >
+        <div class="d-none d-md-flex justify-content-center flex-wrap mt-2 pb-5 match-cards" >
             <app-match-cards></app-match-cards>
             <app-match-cards></app-match-cards>
             <app-match-cards></app-match-cards>
@@ -93,28 +119,48 @@
             <app-match-cards></app-match-cards>                  
         </div>
 
-        <div class="d-flex d-sm-none carousel carousel-cards">
-            <div class="carousel-cell">
-                <app-match-cards></app-match-cards>
+        <div class="d-flex d-md-none carousel-cards w-100" >
+            <div class="carousel w-100">
+                <div class="carousel-cell w-100">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>            
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>            
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>            
+                <div class="carousel-cell">
+                    <app-match-cards></app-match-cards>
+                </div>                    
             </div>
-            <div class="carousel-cell">
-                <app-match-cards></app-match-cards>
-            </div>
-            <div class="carousel-cell">
-                <app-match-cards></app-match-cards>
-            </div>
-            <div class="carousel-cell">
-                <app-match-cards></app-match-cards>
-            </div>
-            <div class="carousel-cell">
-                <app-match-cards></app-match-cards>
-            </div>
-            <div class="carousel-cell">
-                <app-match-cards></app-match-cards>
-            </div>
-            <div class="carousel-cell">
-                <app-match-cards></app-match-cards>
-            </div>                    
         </div>
     </div>
 

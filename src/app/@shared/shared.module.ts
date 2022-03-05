@@ -6,11 +6,13 @@ import { NgSelectModule } from "@ng-select/ng-select";
 import { CarouselModule } from "ngx-owl-carousel-o";
 import { NgxTrimDirectiveModule } from "ngx-trim-directive";
 import { MatchCardsComponent } from "./components/match-cards/match-cards.component";
+import { ScoreCardComponent } from "./components/score-card/score-card.component";
 
 
 @NgModule({
   declarations: [    
-    MatchCardsComponent
+    MatchCardsComponent,
+    ScoreCardComponent
   ],
   imports: [
     CommonModule,    
@@ -44,7 +46,8 @@ import { MatchCardsComponent } from "./components/match-cards/match-cards.compon
 
     CarouselModule,
 
-    MatchCardsComponent
+    MatchCardsComponent,
+    ScoreCardComponent
   ]
 })
 export class SharedModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-admin',
@@ -7,14 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  admin: any={};
+  carouselSlideOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    autoplay: false,
+    navSpeed: 1500,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 0
+      },
+      400: {
+        items: 0
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
 
   constructor() { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('sm|sidebar-toggle') === 'true') {
-      document.body.classList.toggle('sm-sidenav-toggled');
-    }
+    // if (localStorage.getItem('sm|sidebar-toggle') === 'true') {
+    //   document.body.classList.toggle('sm-sidenav-toggled');
+    // }
   }
 
   toggleSidebar(event: MouseEvent): void {
