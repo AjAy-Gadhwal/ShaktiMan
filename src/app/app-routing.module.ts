@@ -7,11 +7,15 @@ import { HorsebettingsecondComponent } from './components/horsebettingsecond/hor
 import { PromotionComponent } from './components/promotion/promotion.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
+  { path: 'home', component: HomepageComponent },
   { path: 'casino', component: CasinoComponent },
   { path: 'promotion', component: PromotionComponent },
   { path: 'horsebetting', component: HorsebettingComponent },
   { path: 'horsebetting2', component: HorsebettingsecondComponent },
+  {
+    path: '',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
 ];
 
 @NgModule({

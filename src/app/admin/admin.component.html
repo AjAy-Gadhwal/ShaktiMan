@@ -1,65 +1,272 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark">
-    <a class="navbar-brand p-0 d-flex justify-content-center" [routerLink]="['/admin']" >
-        <img src="assets/img/navbar-logo.jpg"/>
-    </a>
-    
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" (click)="toggleSidebar($event)"  href="#!"><i class="fas fa-bars"></i></button>
-    
-    <ul class="navbar-nav ms-auto me-3 me-lg-4">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex justify-content-center align-items-center" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="admin?.name" >
-                <div class="rounded-circle header-profile-img me-3">
-                    <img [src]="admin?.avatar" *ngIf="admin?.avatar" class="rounded-circle w-100 h-100" (error)="admin.avatar=''" >
-                    <div *ngIf="!admin?.avatar" class="rounded-circle bg-secondary w-100 h-100 d-flex justify-content-center align-items-center fs-2 text-light" >
-                        {{admin?.name | firstCharacter | uppercase}}
-                    </div>                                        
+<nav class="sm-topnav navbar navbar-expand navbar-dark">
+    <div class="row flex-fill">
+        <div class="col-6 col-md-4 d-flex justify-content-start align-items-center">
+            <a class="navbar-brand p-0 d-flex justify-content-center" >
+                <div class="main-logo d-flex justify-content-center align-items-center" [routerLink]="['/admin']"  >
+                    <div>S</div>
+                    <div>M</div>
                 </div>
-                Hi {{admin?.name}}
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
-                <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                <li><hr class="dropdown-divider" /></li> -->
-                <li><a class="dropdown-item" href="JavaScript:void(0);" (click)="logout()" >Logout</a></li>
-            </ul>
-        </li>
-    </ul>
+        
+            <div class="input-group d-flex flex-column justify-content-center align-items-center search-box">
+                <div class="input-group-prepend d-flex justify-content-center align-items-center">
+                    <span class="input-group-text">
+                        <img src="/assets/images/search.svg" alt="" srcset="">            
+                    </span>
+                </div>
+                <input type="text" placeholder="Search Here" class="form-control" />
+            </div>
+
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" (click)="toggleSidebar($event)"  href="#!">
+                <img src="/assets/images/menu.svg" alt="" srcset="">            
+            </button>
+        </div>
+
+        <div class="col-4 d-none d-md-flex justify-content-center align-items-center">
+            <div class="nav-btns d-flex justify-content-center align-items-center" >                
+                <button class="sm-angel-btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    Sports
+                </button>
+
+                <button class="sm-angel-btn" routerLink="/casino" routerLinkActive="active">
+                    Casino
+                </button>
+
+                <button class="sm-angel-btn" routerLink="/inplay" routerLinkActive="active">
+                    Inplay
+                </button>
+
+                <button class="sm-angel-btn" routerLink="/fulltoz" routerLinkActive="active">
+                    Fulltoz
+                </button>                
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 d-flex justify-content-end align-items-center action-btns">
+            <button class="btn btn-link" routerLink="/login" routerLinkActive="active">
+                Log in
+            </button>   
+
+            <button class="sm-btn ms-4 me-4" routerLink="/signup" routerLinkActive="active">
+                Sign up
+            </button>   
+        </div>
+    </div>        
 </nav>
+
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-            <div class="sb-sidenav-menu scrollbar">
-                <div class="nav">                    
-                    <div class="sb-sidenav-menu-heading">Menu</div>                    
-                    <a class="nav-link" [routerLink]="['/admin/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
-                        <div class="nav-rounded-top" ></div>
-                        <div class="sb-nav-link-icon"><i class="fas fa-tasks fa-fw"></i></div>Tasks
-                        <div class="nav-rounded-bottom" ></div>
-                    </a>     
+        <nav class="sm-sidenav accordion sm-sidenav-dark" id="sidenavAccordion">
+            <div class="sm-sidenav-menu">
+                <div class="nav ">
+                    <div class="d-flex flex-row flex-md-column justify-content-center align-items-center mt-3" >
+                        <div class="full-logo d-flex d-md-none justify-content-center align-items-center me-3" [routerLink]="['/admin']"  >
+                            <div>Shakti</div>
+                            <div>maan</div>
+                        </div>
 
-                    <a class="nav-link" [routerLink]="['/admin/influences']" routerLinkActive="active">
-                        <div class="nav-rounded-top" ></div>
-                        <div class="sb-nav-link-icon"><i class="fas fa-users fa-fw"></i></div>Influences
-                        <div class="nav-rounded-bottom" ></div>
-                    </a>    
+                        <button class="btn menu-btn d-flex justify-content-center align-items-center" >
+                            <img src="../../../assets/images/percent.svg" alt=""   />
+                        </button>
+    
+                        <button class="btn menu-btn d-flex justify-content-center align-items-center" >
+                            <img src="../../../assets/images/star.svg" alt=""   />
+                        </button>
+    
+                        <button class="btn menu-btn d-flex justify-content-center align-items-center" >
+                            <img src="../../../assets/images/bet-click.svg" alt=""   />
+                        </button>
+                    </div>
+                    
+                    <ngb-accordion #acc="ngbAccordion" class="menu-accordion" [closeOthers]="true" >
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/batball.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Cricket</div>
 
-                    <a class="nav-link" [routerLink]="['/admin/payments']" routerLinkActive="active">
-                        <div class="nav-rounded-top" ></div>
-                        <div class="sb-nav-link-icon"><i class="fas fa-dollar-sign fa-fw"></i></div>Payments
-                        <div class="nav-rounded-bottom" ></div>
-                    </a>    
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Cricket</div>
 
-                    <a class="nav-link" [routerLink]="['/admin/shops']" routerLinkActive="active">
-                        <div class="nav-rounded-top" ></div>
-                        <div class="sb-nav-link-icon"><i class="fas fa-store-alt fa-fw"></i></div>Shops
-                        <div class="nav-rounded-bottom" ></div>
-                    </a>     
+                                <div class="menus" >
+                                    <div class="sub-title" >Test Matches</div>
+                                    <div class="list" >
+                                        <p>ABU DHABI T20</p>
+                                        <p>ICC world cup</p>
+                                        <p>SUPER SMASH</p>
+                                    </div>
+                                </div>                    
+                                
+                                <div class="menus" >
+                                    <div class="sub-title" >IPL 2021</div>
+                                    <div class="list" >
+                                        <p>ABU DHABI T20</p>
+                                        <p>ICC world cup</p>
+                                        <p>SUPER SMASH</p>
+                                    </div>
+                                </div>                    
+                            </ng-template>
+                        </ngb-panel>
+                        
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/volleyball.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Football</div>
+
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Football</div>                                              
+                            </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/tennis.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Lawn Tennis</div>
+
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Lawn Tennis</div>                                              
+                            </ng-template>
+                        </ngb-panel>
+
+
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/tt.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Table Tennis</div>
+
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Table Tennis</div>                                              
+                            </ng-template>
+                        </ngb-panel>
+
+
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/boxing.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Boxing</div>
+
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Boxing</div>                                              
+                            </ng-template>
+                        </ngb-panel>
+
+
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/cart.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Hockey</div>
+
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Hockey</div>                                              
+                            </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/dog.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Dog</div>
+
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Dog</div>                                              
+                            </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader let-opened="opened">
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
+                                        <img src="../../../assets/images/cart.svg" alt=""   />
+                                    </div> 
+                                    
+                                    <div class="d-block d-md-none title" >Hockey</div>
+
+                                    <div class="d-flex d-md-none justify-content-center align-items-center toggle-btn" [ngClass]="{'active': opened }" >
+                                        <img src="/assets/images/close.svg" alt="" srcset="">
+                                    </div>    
+                                </button>
+                            </ng-template>
+                          
+                            <ng-template ngbPanelContent>
+                                <div class="title" >Hockey</div>                                              
+                            </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
                 </div>
             </div>            
         </nav>
     </div>
-    <div id="layoutSidenav_content">
-        <main class="px-0 py-3 px-md-3 py-md-5" >
+
+    <div id="layoutSidenav_content" (click)="closeSidebar($event)" >
+        <main class="px-2" >
             <router-outlet></router-outlet>            
         </main>
         

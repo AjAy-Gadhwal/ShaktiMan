@@ -13,11 +13,11 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 import { RulesComponent } from './components/rules/rules.component';
 import { HorsebettingComponent } from './components/horsebetting/horsebetting.component';
 import { HorsebettingsecondComponent } from './components/horsebettingsecond/horsebettingsecond.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { SharedModule } from './@shared/shared.module';
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
   ],
   imports: [
     BrowserModule,
-    CarouselModule,
+    SharedModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatInputModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../@shared/services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,27 +7,28 @@ import { AuthService } from '../@shared/services/auth.service';
 })
 export class AdminComponent implements OnInit {
 
-  admin: any = {};
+  admin: any={};
 
-  constructor(
-    private authService: AuthService
-  ) { 
-    this.admin = this.authService.adminData();
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-      document.body.classList.toggle('sb-sidenav-toggled');
+    if (localStorage.getItem('sm|sidebar-toggle') === 'true') {
+      document.body.classList.toggle('sm-sidenav-toggled');
     }
   }
 
   toggleSidebar(event: MouseEvent): void {
     event.preventDefault();
-    document.body.classList.toggle('sb-sidenav-toggled');
-    localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled').toString());
+    document.body.classList.toggle('sm-sidenav-toggled');
+    localStorage.setItem('sm|sidebar-toggle', document.body.classList.contains('sm-sidenav-toggled').toString());
+  }
+
+  closeSidebar(event: MouseEvent): void {
+    event.preventDefault();
+    document.body.classList.remove('sm-sidenav-toggled');
+    localStorage.setItem('sm|sidebar-toggle', document.body.classList.contains('sm-sidenav-toggled').toString());
   }
 
   logout(): void {
-    this.authService.adminLogout();
   }
 }
