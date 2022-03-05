@@ -74,15 +74,15 @@
                         </div>
 
                         <button class="btn menu-btn d-flex justify-content-center align-items-center" >
-                            <img src="../../../assets/images/percent.svg" alt=""   />
+                            <img src="/assets/images/percent.svg" alt=""   />
                         </button>
     
                         <button class="btn menu-btn d-flex justify-content-center align-items-center" >
-                            <img src="../../../assets/images/star.svg" alt=""   />
+                            <img src="/assets/images/star.svg" alt=""   />
                         </button>
     
                         <button class="btn menu-btn d-flex justify-content-center align-items-center" >
-                            <img src="../../../assets/images/bet-click.svg" alt=""   />
+                            <img src="/assets/images/bet-click.svg" alt=""   />
                         </button>
                     </div>
                     
@@ -91,7 +91,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/batball.svg" alt=""   />
+                                        <img src="/assets/images/batball.svg" alt=""   />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Cricket</div>
@@ -129,7 +129,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/volleyball.svg" alt=""   />
+                                        <img src="/assets/images/volleyball.svg" alt=""   />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Football</div>
@@ -149,7 +149,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/tennis.svg" alt=""   />
+                                        <img src="/assets/images/tennis.svg" alt=""   />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Lawn Tennis</div>
@@ -170,7 +170,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/tt.svg" alt=""   />
+                                        <img src="/assets/images/tt.svg" alt=""   />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Table Tennis</div>
@@ -191,7 +191,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/boxing.svg" alt=""   />
+                                        <img src="/assets/images/boxing.svg" alt=""   />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Boxing</div>
@@ -212,7 +212,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/cart.svg" alt=""   />
+                                        <img src="/assets/images/cart.svg" alt=""   />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Hockey</div>
@@ -232,7 +232,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/dog.svg" alt=""   />
+                                        <img src="/assets/images/dog.svg" alt="" />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Dog</div>
@@ -252,7 +252,7 @@
                             <ng-template ngbPanelHeader let-opened="opened">
                                 <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
                                     <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
-                                        <img src="../../../assets/images/cart.svg" alt=""   />
+                                        <img src="/assets/images/cart.svg" alt=""   />
                                     </div> 
                                     
                                     <div class="d-block d-lg-none title" >Hockey</div>
@@ -276,19 +276,36 @@
     <div id="layoutSidenav_content" (click)="closeSidebar($event)" >
         <main class="px-2" >
             <router-outlet></router-outlet>            
-        </main>
-        
-        <!-- <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer> -->
+        </main>        
     </div>
+</div>
+
+<div class="sm-bottom-bar d-flex d-md-none">
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center active">
+        <img src="/assets/images/basket-ball.svg" alt="" />   
+        <div>Sports</div>   
+    </a>
+
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center">
+        <img src="/assets/images/basket-ball.svg" alt="" />      
+        <div>Inplay</div>   
+    </a>
+
+    <a class="sm-menu-item sm-center d-flex flex-column justify-content-center align-items-center">
+        <img src="/assets/images/basket-ball.svg" alt="" />      
+        <div>Inplay</div>   
+
+        <a class="sm-nav-indicator"></a>
+    </a>
+
+
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center">
+        <img src="/assets/images/basket-ball.svg" alt="" />      
+        <div>Casing</div>   
+    </a>
+
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center">
+        <img src="/assets/images/basket-ball.svg" alt="" />      
+        <div>Profile</div>   
+    </a>
 </div>

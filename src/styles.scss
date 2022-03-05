@@ -7,6 +7,11 @@
   --my-success: #4caf50;
   --primary: #23B054;
   --primary-border-shadow: #0071e33d;
+  --primary-color: #0D6FFA;
+  --accent-color: #49CE95;
+  --danger-color: #EC3582;
+  --fore-color: rgba(0,0,0,0.65);
+  --main-cast-shadow: 0px 3px 12px rgba(0, 0, 0, 0.08), 0px 3px 6px rgba(0, 0, 0, 0.12);
 }
 
 html,
@@ -116,6 +121,7 @@ body {
     #layoutSidenav_content { 
       margin-left: -321px;
       border-radius: 0px;
+      padding-bottom: 55px;
     }
   }
 }
@@ -191,6 +197,11 @@ body {
   .left-menu-panel, .right-menu-panel {
     width: 300px;
     max-width: 50%;
+
+    @media (max-width: 768px) { 
+      width: auto;
+      max-width: auto;;
+    }
   }
 
   .navbar-brand {
@@ -516,6 +527,82 @@ body {
   }
 }
 
+.sm-bottom-bar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+  height: 64px;
+	display: flex;
+	padding: 4px min(max(12px, 3em), 24px);
+	justify-content: space-between;
+  margin: auto 0px 0px 0px;
+	background-image: radial-gradient(circle at 50% 6px,transparent 36px, #191C22 6.95%, #1B1E26 94.81%);
+	filter: drop-shadow(0px -1px 6px rgba(0, 0, 0, 0.08)) drop-shadow(0px -2px 12px rgba(0, 0, 0, 0.12));
+  box-shadow: -2px 2px 4px rgba(10, 12, 14, 0.2), 2px -2px 4px rgba(10, 12, 14, 0.2), -2px -2px 4px rgba(42, 46, 58, 0.9), 2px 2px 5px rgba(10, 12, 14, 0.9), inset 1px 1px 2px rgba(42, 46, 58, 0.3), inset -1px -1px 2px rgba(10, 12, 14, 0.5);
+	transition: cubic-bezier(0.57, 0.23, 0.08, 0.96) .45s;
+  
+  .sm-menu-item {
+    color: var(--fore-color);
+    transition: ease-in-out .5s;
+    cursor: pointer;
+    color: #166130;
+    text-decoration: none;
+    
+    &.active {
+      color: #23B054;      
+    }
+
+    &.sm-center {
+      transform: translate3d(0px,-22px,0px);
+      padding-bottom: 9px;
+
+      img, div {
+        position: relative;
+        z-index: 3;
+      }
+    }
+
+    img {
+      width: 21px;
+      height: 21px;
+    }
+
+    div {
+      margin-top: 4px;
+      font-size: 12px;
+      line-height: normal;
+    }
+    
+    .sm-nav-indicator {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      bottom: 6px;
+      left: calc(50% - (56px / 2) + 1);
+      background: #1A1D24;
+      box-shadow: -5px 5px 10px rgba(10, 12, 14, 0.2), 5px -5px 10px rgba(10, 12, 14, 0.2), -5px -5px 10px rgba(42, 46, 58, 0.9), 5px 5px 13px rgba(10, 12, 14, 0.9), inset 1px 1px 2px rgba(42, 46, 58, 0.3), inset -1px -1px 2px rgba(10, 12, 14, 0.5);
+      border-radius: 50%;
+      transition: cubic-bezier(0.45, 0.73, 0, 0.59) .3s;
+
+      &::before {
+        position: absolute;
+        content: '10';
+        top: 0px;
+        right: 0px;
+        width: 14px;
+        height: 14px;
+        border: 0.5px solid #23B054;
+        background: #1A1D24;
+        color: #23B054;
+        font-size: 9px;
+        border-radius: 14px;
+        text-align: center;
+      }
+    }
+  }
+  
+}
 
 
 @media (min-width: 992px) {
