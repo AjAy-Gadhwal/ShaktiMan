@@ -57,9 +57,9 @@
         
                 .tab {
                     position: relative;
-                    width: min(max(82px, 10vw), 110px);
+                    width: min(max(65px, 7vw), 110px);
                     height: min(max(30px, 4vw), 49px);
-                    right: min(max(16px, 2vw), 24px);
+                    right: min(max(14px, 2vw), 24px);
                     color: white;
                     filter: drop-shadow(0px 0px 2px rgba(50, 54, 60, 1));
     
@@ -67,7 +67,7 @@
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
-                        width: min(max(92px, 12vw), 134px);
+                        width: min(max(80px, 9vw), 134px);
                         height: min(max(30px, 4vw), 49px);
                         padding-left: min(max(16px, 2vw), 24px);
                         background: linear-gradient(134.38deg, #1A1D24 0%, #181B20 109.38%);
@@ -114,9 +114,12 @@
                     color: #918F8F;
                     background-color: transparent;
                     border: 0px;
-                    outline: none;
-                    box-shadow: none !important;
+                    outline: none;                    
                     padding: 0px  min(max(12px, 1vw), 24px);                   
+
+                    &:focus {
+                        box-shadow: none;
+                    }
                 }
                 
                 &::before, &::after {

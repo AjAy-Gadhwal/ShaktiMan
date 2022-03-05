@@ -5,13 +5,13 @@ import { NgbPaginationModule, NgbTooltipModule, NgbAccordionModule } from "@ng-b
 import { NgSelectModule } from "@ng-select/ng-select";
 import { CarouselModule } from "ngx-owl-carousel-o";
 import { NgxTrimDirectiveModule } from "ngx-trim-directive";
-import { MatchCardsComponent } from "./components/match-cards/match-cards.component";
+import { MatchCardComponent } from "./components/match-card/match-card.component";
 import { ScoreCardComponent } from "./components/score-card/score-card.component";
 
 
 @NgModule({
   declarations: [    
-    MatchCardsComponent,
+    MatchCardComponent,
     ScoreCardComponent
   ],
   imports: [
@@ -46,7 +46,7 @@ import { ScoreCardComponent } from "./components/score-card/score-card.component
 
     CarouselModule,
 
-    MatchCardsComponent,
+    MatchCardComponent,
     ScoreCardComponent
   ]
 })

@@ -27,7 +27,10 @@ export class AdminComponent implements OnInit {
       740: {
         items: 3
       },
-      940: {
+      1200: {
+        items: 3
+      },
+      1201: {
         items: 4
       }
     },

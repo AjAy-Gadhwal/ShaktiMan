@@ -1,6 +1,6 @@
 <nav class="sm-topnav navbar navbar-expand navbar-dark">
-    <div class="row flex-fill w-100">
-        <div class="col-6 col-md-3 d-flex justify-content-start align-items-center">
+    <div class="d-flex justify-content-between align-items-center w-100">
+        <div class="d-flex justify-content-start align-items-center left-menu-panel">
             <a class="navbar-brand p-0 d-flex justify-content-center" >
                 <div class="main-logo d-flex justify-content-center align-items-center" [routerLink]="['/admin']"  >
                     <div>S</div>
@@ -22,7 +22,7 @@
             </button>
         </div>
 
-        <div class="col-6 d-none d-md-flex justify-content-center align-items-center nav-btns">
+        <div class="d-none d-lg-flex justify-content-center align-items-center nav-btns">
             <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-nav-btns" >                                
                 <ng-template carouselSlide>
                     <button class="sm-angel-btn" routerLink="/fulltoz" routerLinkActive="active">
@@ -50,7 +50,7 @@
             </owl-carousel-o>  
         </div>
 
-        <div class="col-6 col-md-3 d-flex justify-content-end align-items-center action-btns">
+        <div class="d-flex justify-content-end align-items-center action-btns right-menu-panel">
             <button class="btn btn-link" routerLink="/login" routerLinkActive="active">
                 Log in
             </button>   

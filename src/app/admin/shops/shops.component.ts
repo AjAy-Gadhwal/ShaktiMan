@@ -44,7 +44,7 @@ export class ShopsComponent implements OnInit {
 
     if (elem) {
       new Flickity(elem, {  
-        autoPlay: true,
+        autoPlay: false,
         cellAlign: 'center', 
         contain: false,
         groupCells: '20%',
