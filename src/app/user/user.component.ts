@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { LoginModalComponent } from '../@shared/components/login-modal/login-modal.component';
+import { SignupModalComponent } from '../@shared/components/signup-modal/signup-modal.component';
 
 @Component({
   selector: 'app-user',
@@ -39,36 +42,11 @@ export class UserComponent implements OnInit {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) { }
 
-  ngOnInit(): void {
-    // if (localStorage.getItem('sm|sidebar-toggle') === 'true') {
-    //   document.body.classList.toggle('sm-sidenav-toggled');
-    // }
-    // var menu_bar = document.querySelector(".sc-bottom-bar") as any;
-    // var menu_item = document.querySelectorAll(".sc-menu-item") as any;
-    // var menu_indicator = document.querySelector(".sc-nav-indicator") as any;
-    // var menu_current_item = document.querySelector(".sc-current") as any;
-    // var menu_position;
-
-    // if (menu_current_item && menu_indicator) {
-    //   menu_position = menu_current_item.offsetLeft - 16;
-    //   menu_indicator.style.left = menu_position + "px";
-    //   menu_bar.style.backgroundPosition = menu_position - 8 + "px";
-    //   menu_item.forEach((select_menu_item: any) => {
-    //     select_menu_item.addEventListener("click",  (e: any) => {
-    //       e.preventDefault();
-    //       menu_position = e.offsetLeft - 16;
-    //       menu_indicator.style.left = menu_position + "px";
-    //       menu_bar.style.backgroundPosition = menu_position - 8 + "px";
-    //       [...select_menu_item.parentElement.children].forEach((sibling) => {
-    //         sibling.classList.remove("sc-current");
-    //       });
-    //       select_menu_item.classList.add("sc-current");
-    //     });
-    //   });
-    // }
+  ngOnInit(): void {    
   }
 
   toggleSidebar(event: MouseEvent): void {
@@ -89,5 +67,13 @@ export class UserComponent implements OnInit {
   openComponent(route: string): void {
     console.log('route : ', route);    
     this.router.navigateByUrl(route);
+  }
+
+  openLoginModal(): void {
+    const modalRef = this.modalService.open(LoginModalComponent, { modalDialogClass: 'sm-modal', size: 'lg' });
+  }
+
+  openSignupModal(): void {
+    const modalRef = this.modalService.open(SignupModalComponent, { modalDialogClass: 'sm-modal', size: 'lg' });
   }
 }

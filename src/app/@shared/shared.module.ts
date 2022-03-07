@@ -12,6 +12,8 @@ import { MatchCardComponent } from "./components/match-card/match-card.component
 import { ScoreCardComponent } from "./components/score-card/score-card.component";
 import { SubNavComponent } from './components/sub-nav/sub-nav.component';
 import { MatchScoreModalComponent } from './components/match-score-modal/match-score-modal.component';
+import { LoginModalComponent } from './components/login-modal/login-modal.component';
+import { SignupModalComponent } from './components/signup-modal/signup-modal.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { MatchScoreModalComponent } from './components/match-score-modal/match-s
     CricketCardComponent,
     BestSlipCardComponent,
     MatchScoreModalComponent,
-    MatchScoreModalComponent
+    MatchScoreModalComponent,
+    LoginModalComponent,
+    SignupModalComponent
   ],
   imports: [
     CommonModule,    
@@ -63,7 +67,9 @@ import { MatchScoreModalComponent } from './components/match-score-modal/match-s
     SubNavComponent,
     CricketCardComponent,
     BestSlipCardComponent,
-    MatchScoreModalComponent
+    MatchScoreModalComponent,
+    LoginModalComponent,
+    SignupModalComponent
   ]
 })
 export class SharedModule { }

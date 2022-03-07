@@ -51,11 +51,11 @@
         </div>
 
         <div class="d-flex justify-content-end align-items-center action-btns right-menu-panel">
-            <button class="btn btn-link" routerLink="/login" routerLinkActive="active">
+            <button class="btn btn-link" (click)="openLoginModal()">
                 Log in
             </button>   
 
-            <button class="sm-btn ms-4 me-4" routerLink="/signup" routerLinkActive="active">
+            <button class="sm-btn ms-4 me-4" (click)="openSignupModal()">
                 Sign up
             </button>   
         </div>
