@@ -3,11 +3,11 @@ import * as Flickity from "flickity";
 import { OwlOptions } from "ngx-owl-carousel-o";
 
 @Component({
-  selector: 'app-shops',
-  templateUrl: './shops.component.html',
-  styleUrls: ['./shops.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class ShopsComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
   carouselSlideOptions: OwlOptions = {
     loop: true,
@@ -33,6 +33,12 @@ export class ShopsComponent implements OnInit {
       }
     },
     nav: false
+  }
+
+  subNavTabs = {
+    today: "Today",
+    tomorrow: "Tomorrow",
+    inplay: "Inplay"
   }
   
   constructor(

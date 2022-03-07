@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
-export class AdminComponent implements OnInit {
+export class UserComponent implements OnInit {
 
   carouselSlideOptions: OwlOptions = {
     loop: true,
@@ -37,7 +38,9 @@ export class AdminComponent implements OnInit {
     nav: true
   }
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     // if (localStorage.getItem('sm|sidebar-toggle') === 'true') {
@@ -81,5 +84,10 @@ export class AdminComponent implements OnInit {
   }
 
   logout(): void {
+  }
+
+  openComponent(route: string): void {
+    console.log('route : ', route);    
+    this.router.navigateByUrl(route);
   }
 }

@@ -89,8 +89,8 @@
                     <ngb-accordion #acc="ngbAccordion" class="menu-accordion" [closeOthers]="true" >
                         <ngb-panel>
                             <ng-template ngbPanelHeader let-opened="opened">
-                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle  >
-                                    <div class="img-container d-flex justify-content-center align-items-center" [ngClass]="{'active': opened }" >
+                                <button class="accordion-button custom-header d-flex justify-content-center align-items-center" ngbPanelToggle routerLink="/cricket" routerLinkActive="active"  >
+                                    <div class="img-container d-flex justify-content-center align-items-center" >
                                         <img src="/assets/images/batball.svg" alt=""   />
                                     </div> 
                                     

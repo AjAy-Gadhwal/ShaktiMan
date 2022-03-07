@@ -1,0 +1,297 @@
+:host {
+	display: flex;
+	// width: 100%;
+	height: 100%;
+	// flex: 1;
+	flex-direction: column;
+}
+
+.cricket-card {	
+    width: max-content;
+    max-width: 100%;
+    height: min(max(150px, 10vw), 224px);
+	background: rgba(62, 65, 75, 0.2);
+    backdrop-filter: blur(80px);
+    border-radius: 18px;
+    margin: 18px 0px 0px 0px;
+
+    .card-header {
+        position: relative;
+        width: 75px;
+        height: 100%;
+        border-right: 2px dashed #000;
+
+        &::before, &::after {
+            position: absolute;
+            content: '';
+            width: 30px;
+            height: 30px;
+            left: 60px;        
+            background: #191C22;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        &::before {
+            top: -15px;
+        }
+
+        &::after {
+            bottom: -15px;
+        }
+        
+        
+        .header {
+            position: absolute;
+            left: -45px;
+            color: white;
+            width: 105px;
+            height: 28px;
+            z-index: 1;
+            border-bottom-right-radius: 65px;
+            border-bottom-left-radius: 65px;
+            text-align: center;
+            background: linear-gradient(180deg, #3E119E -19.7%, #35127D 125.76%);
+            box-shadow: 7.51117e-16px 1px 5px #180C40, inset -3.50521e-16px -5.72444px 5.72444px #281694, inset 3.50521e-16px 5.72444px 5.72444px #574CD2;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 28px;
+            text-transform: capitalize;
+            color: #BDD1C4;
+            transform: rotate(-90deg);
+        }
+
+        .close-icon {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 20px;
+            left: 16px;
+            border: 1.28px solid #666666;
+            border-radius: 50%;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .details {
+            position: absolute;
+            right: -20.5px;
+            width: 41px;
+            height: 53px;
+            background: #1E2427;
+            box-shadow: 1.15217px -1.15217px 2.30435px rgba(14, 18, 20, 0.2), -1.15217px -1.15217px 2.30435px rgba(50, 62, 68, 0.9), 1.15217px 1.15217px 3.45652px rgba(14, 18, 20, 0.9);
+            border-radius: 3.45652px;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 14px;
+            letter-spacing: -0.01em;
+            text-transform: capitalize;
+            color: #656768;         
+            
+            .description {
+                font-weight: 500;
+                font-size: 9px;
+                line-height: 12px;
+                text-transform: capitalize;
+                color: #BDD1C4;
+            }
+
+            .rate {
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 16px;
+                text-transform: capitalize;
+                color: #CF2121;
+            }
+
+            .rate-green {
+                font-weight: 600;
+                font-size: 9.21739px;
+                line-height: 12px;
+                text-transform: capitalize;
+                color: #1D8A43;
+                margin-top: 6px;
+            }
+        }
+    }
+
+    .card-details {
+        position: relative;
+        height: 100%;
+        padding: 18px min(32px, 5vw, 48px) 18px min(32px, 5vw, 48px);
+        
+        .teams {
+            height: 100%;
+
+            .team {
+                position: relative;
+
+                .vs {
+                    position: relative;
+                    width: min(max(35px, 3vw), 50px);
+                    height: min(max(35px, 3vw), 50px); 
+                }
+
+                .circle {
+                    background: linear-gradient(135deg, #1C2027 0%, #1E242B 100%);
+                    box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
+                    width: min(max(35px, 3vw), 50px);
+                    height: min(max(35px, 3vw), 50px);
+                    min-width: min(max(35px, 3vw), 50px);
+                    min-height: min(max(35px, 3vw), 50px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+
+                    &.team-1, &.team-2 {
+                        width: min(max(24px, 2vw), 34px);
+                        height: min(max(24px, 2vw), 34px);
+                        min-width: min(max(24px, 2vw), 34px);
+                        min-height: min(max(24px, 2vw), 34px);
+                    }
+
+                    &.team-2 {
+                        position: absolute;
+                        left: 22px;
+                    }
+                    
+                    img {
+                        width: 50%;
+                    }
+                }
+    
+                .name {
+                    font-weight: 600;
+                    font-size: min(max(10px, 1vw), 16px);
+                    text-transform: capitalize;
+                    color: #BDD1C4;
+                }
+
+                .score {
+                    font-weight: 600;
+                    font-size: min(max(10px, 1vw), 16px);
+                    text-transform: capitalize;
+
+                    &.positive {
+                        color: #22B455;
+                    }
+
+                    &.negative {
+                        color: #CF2121;
+                    }
+                }
+            }
+    
+            
+        }
+
+        .action-btns {
+            position: relative;
+            height: 100%;
+            margin: 0px 18px 0px 24px;
+            display: flex;
+            justify-content: space-between;
+                      
+            .match-suspended {
+                position: absolute;
+                width: 100%;
+                height: 51px;
+                top: -4px;
+                background: rgba(61, 63, 68, 0.122);
+                backdrop-filter: blur(11px);
+                border-radius: 9px;
+                font-weight: 600;
+                font-size: min(max(14px, 1vw), 20px);
+                line-height: 26px;
+                text-transform: capitalize;
+                color: #0BC44B;
+                padding: min(8px, 3vw, 12px);
+            }
+    
+            .green-btn, .pink-btn {
+                width: min(max(32px, 3vw), 67px);
+                height: min(max(28px, 2vw), 43px);
+                font-weight: 400;
+                border-radius: 2px;                  
+                margin: 0px 5px 0px 5px;
+                cursor: pointer;
+
+                .score {
+                    font-weight: 500;
+                    font-size: min(max(12px, 1vw), 17px);
+                }
+
+                .description {
+                    font-weight: 600;
+                    font-size: min(max(8px, 1vw), 10px);
+                    text-transform: capitalize;
+                    color: #BDD1C4;
+                }
+            }
+    
+            .green-btn {
+                background: #1E252A;
+                color: #23B054;            
+                box-shadow: -1.42308px 1.42308px 2.84615px rgba(12, 15, 17, 0.2), 1.42308px -1.42308px 2.84615px rgba(12, 15, 17, 0.2), -1.42308px -1.42308px 2.84615px rgba(48, 59, 67, 0.9), 1.42308px 1.42308px 4.26923px rgba(12, 15, 17, 0.9), inset 1.42308px 1.42308px 2.84615px rgba(48, 59, 67, 0.3), inset -1.42308px -1.42308px 2.84615px rgba(12, 15, 17, 0.5);
+
+                .score {
+                    color: #22944C;
+                }
+    
+                &.active {
+                    background: #1D2A1F;
+                    box-shadow: 1.25333px 1.25333px 2.50667px rgba(46, 67, 50, 0.3), -1.25333px -1.25333px 2.50667px rgba(12, 17, 12, 0.5), inset -1.25333px 1.25333px 2.50667px rgba(12, 17, 12, 0.2), inset 1.25333px -1.25333px 2.50667px rgba(12, 17, 12, 0.2), inset -1.25333px -1.25333px 2.50667px rgba(46, 67, 50, 0.9), inset 1.25333px 1.25333px 3.76px rgba(12, 17, 12, 0.9);
+                }
+            }
+    
+            .pink-btn {
+                background: #1E252A;
+                color: #A954EB;
+                box-shadow: -1.42308px 1.42308px 2.84615px rgba(12, 15, 17, 0.2), 1.42308px -1.42308px 2.84615px rgba(12, 15, 17, 0.2), -1.42308px -1.42308px 2.84615px rgba(48, 59, 67, 0.9), 1.42308px 1.42308px 4.26923px rgba(12, 15, 17, 0.9), inset 1.42308px 1.42308px 2.84615px rgba(48, 59, 67, 0.3), inset -1.42308px -1.42308px 2.84615px rgba(12, 15, 17, 0.5);
+
+                .score {
+                    color: #A954EB;
+                }
+    
+                &.active {
+                    background:#390E5B;
+                    box-shadow: 1.25333px 1.25333px 2.50667px rgba(91, 22, 146, 0.3), -1.25333px -1.25333px 2.50667px rgba(23, 6, 36, 0.5), inset -1.25333px 1.25333px 2.50667px rgba(23, 6, 36, 0.2), inset 1.25333px -1.25333px 2.50667px rgba(23, 6, 36, 0.2), inset -1.25333px -1.25333px 2.50667px rgba(91, 22, 146, 0.9), inset 1.25333px 1.25333px 3.76px rgba(23, 6, 36, 0.9);
+                }
+            }
+        }
+        
+        .card-action-icons {
+            .is-live {
+                width: 33px;
+                height: 20px;
+                background: linear-gradient(135deg, #1C2027 5.94%, #1E242B 100%);
+                box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
+                border-radius: 5px;
+                font-weight: 600;
+                font-size: 10px;
+                line-height: 13px;
+                text-transform: capitalize;
+                color: #CF2121;
+            }
+
+            .actions {
+                width: 33px;
+                height: calc(100% - 20px);
+
+                .material-icons {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 14px;
+                    margin: 4px 0px;
+                    background-color: #166130;
+                    border-radius: 50%;
+                    color: #20232A;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

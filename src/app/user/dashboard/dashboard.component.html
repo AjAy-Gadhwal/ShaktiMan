@@ -1,4 +1,4 @@
-<div class="shops d-flex w-100">
+<div class="dashboard d-flex w-100">
     <div class="left-panel" >
         <div class="carousel-and-tabs" >
             <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-casino" >
@@ -71,35 +71,7 @@
             </owl-carousel-o>
         </div>
 
-        <div class="sub-nav">
-            <div class="nav-btn d-flex justify-content-center align-items-center" >
-                <button class="btn sm-angel-btn active" routerLink="/today" routerLinkActive="sm-angel-btn active" >
-                    Today
-                </button>
-            </div>
-
-            <div class="nav-btn d-flex justify-content-center align-items-center" >
-                <button class="btn" routerLink="/tomorrow" routerLinkActive="sm-angel-btn active" >
-                    Tomorrow
-                </button>
-            </div>
-
-            <div class="nav-btn d-none d-sm-flex justify-content-center align-items-center" >
-                <button class="btn" routerLink="/inplay" routerLinkActive="sm-angel-btn active" >
-                    Inplay
-                </button>
-            </div>
-
-            <select name="sports" id="#">
-                <option value="#">Select Sports</option>
-                <option value="#">Cricket</option>
-                <option value="#">Tennis</option>
-            </select>
-
-            <a href="#">
-                <img src="../../../assets/images/menu.svg" alt="" />
-            </a>
-        </div>
+        <app-sub-nav [tabs]="subNavTabs" [isCondition]="false" ></app-sub-nav>
 
         <div class="d-none d-md-flex justify-content-center flex-wrap mt-2 pb-5 match-cards" >
             <app-match-card></app-match-card>

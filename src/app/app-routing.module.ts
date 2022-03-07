@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'horsebetting2', component: HorsebettingsecondComponent },
   {
     path: '',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
 ];
 

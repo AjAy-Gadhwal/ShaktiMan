@@ -1,0 +1,17 @@
+<div class="sub-nav" *ngIf="tabs" >
+  <div class="nav-btn d-flex justify-content-center align-items-center" [ngClass]="{'is-condition': !isCondition}"  *ngFor="let tab of tabs | keyvalue" >
+      <button class="btn" *ngIf="tab.key" [routerLink]="[tab.key || '']" routerLinkActive="sm-angel-btn active" >
+          {{tab?.value}}
+      </button>
+  </div>
+
+  <select name="sports" id="#" *ngIf="isCondition" >
+      <option value="#">Select Sports</option>
+      <option value="#">Cricket</option>
+      <option value="#">Tennis</option>
+  </select>
+
+  <a href="#" class="pe-3" *ngIf="isCondition" >
+      <img src="../../../assets/images/menu.svg" alt=""  />
+  </a>
+</div>
