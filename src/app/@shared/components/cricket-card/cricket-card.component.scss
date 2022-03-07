@@ -17,7 +17,7 @@
 
     .card-header {
         position: relative;
-        width: 75px;
+        min-width: min(max(60px, 3vw), 75px);
         height: 100%;
         border-right: 2px dashed #000;
 
@@ -26,7 +26,7 @@
             content: '';
             width: 30px;
             height: 30px;
-            left: 60px;        
+            left: calc(min(max(60px, 3vw), 75px) - 15px);        
             background: #191C22;
             border-radius: 50%;
             z-index: 1;
@@ -62,54 +62,95 @@
 
         .close-icon {
             position: absolute;
-            width: 16px;
-            height: 16px;
+            width: min(max(9px, 1vw), 16px);
+            height: min(max(9px, 1vw), 16px);
             top: 20px;
             left: 16px;
             border: 1.28px solid #666666;
             border-radius: 50%;
-            font-size: 10px;
+            font-size: min(max(5px, 1vw), 10px);
             text-align: center;
         }
 
         .details {
             position: absolute;
-            right: -20.5px;
-            width: 41px;
-            height: 53px;
+            right: calc((min(max(30px, 3vw), 41px) / 2) * -1);
+            width: min(max(30px, 3vw), 41px);
             background: #1E2427;
             box-shadow: 1.15217px -1.15217px 2.30435px rgba(14, 18, 20, 0.2), -1.15217px -1.15217px 2.30435px rgba(50, 62, 68, 0.9), 1.15217px 1.15217px 3.45652px rgba(14, 18, 20, 0.9);
             border-radius: 3.45652px;
             font-weight: 600;
             font-size: 11px;
-            line-height: 14px;
             letter-spacing: -0.01em;
             text-transform: capitalize;
-            color: #656768;         
+            color: #656768;
+            padding: 4px;         
+
+            @media (max-width: 575px) { 
+                top: 50%;
+            }
             
             .description {
                 font-weight: 500;
-                font-size: 9px;
-                line-height: 12px;
+                font-size: min(max(5px, 1vw), 9px);
                 text-transform: capitalize;
                 color: #BDD1C4;
             }
 
             .rate {
                 font-weight: 600;
-                font-size: 12px;
-                line-height: 16px;
+                font-size: min(max(8px, 1vw), 12px);
                 text-transform: capitalize;
                 color: #CF2121;
             }
 
             .rate-green {
                 font-weight: 600;
-                font-size: 9.21739px;
-                line-height: 12px;
+                font-size: min(max(5px, 1vw), 9px);
                 text-transform: capitalize;
                 color: #1D8A43;
-                margin-top: 6px;
+                margin-top: min(max(2px, 1vw), 6px);
+            }
+        }
+
+        
+        @media (max-width: 575px) { 
+            .close-icon {
+                top: 8px;
+                left: 26px;
+            }
+
+            .card-action-icons {
+                position: absolute;
+                height: 100%;
+    
+                .is-live {
+                    position: relative;
+                    right: calc((min(max(60px, 3vw), 75px) - 29px) * -1);
+                    top: 15%;
+                } 
+                
+                .actions {
+                    .material-icons {
+                        &.info, &.bookmark, &.star {
+                            position: absolute;                            
+                            left: 12px;
+                            margin: 0px;
+                        }
+
+                        &.info {
+                            top: 23px;
+                        }
+
+                        &.bookmark {
+                            bottom: 23px;
+                        }
+
+                        &.star {
+                            bottom: 8px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -117,7 +158,7 @@
     .card-details {
         position: relative;
         height: 100%;
-        padding: 18px min(32px, 5vw, 48px) 18px min(32px, 5vw, 48px);
+        padding: 18px 12px 18px min(max(24px, 2vw), 32px);
         
         .teams {
             height: 100%;
@@ -127,32 +168,32 @@
 
                 .vs {
                     position: relative;
-                    width: min(max(35px, 3vw), 50px);
-                    height: min(max(35px, 3vw), 50px); 
+                    width: min(max(22px, 3vw), 50px);
+                    height: min(max(22px, 3vw), 50px);                     
                 }
 
                 .circle {
                     background: linear-gradient(135deg, #1C2027 0%, #1E242B 100%);
                     box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
-                    width: min(max(35px, 3vw), 50px);
-                    height: min(max(35px, 3vw), 50px);
-                    min-width: min(max(35px, 3vw), 50px);
-                    min-height: min(max(35px, 3vw), 50px);
+                    width: min(max(22px, 3vw), 50px);
+                    height: min(max(22px, 3vw), 50px);
+                    min-width: min(max(22px, 3vw), 50px);
+                    min-height: min(max(22px, 3vw), 50px);
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     border-radius: 50%;
 
                     &.team-1, &.team-2 {
-                        width: min(max(24px, 2vw), 34px);
-                        height: min(max(24px, 2vw), 34px);
-                        min-width: min(max(24px, 2vw), 34px);
-                        min-height: min(max(24px, 2vw), 34px);
+                        width: min(max(16px, 2vw), 34px);
+                        height: min(max(16px, 2vw), 34px);
+                        min-width: min(max(16px, 2vw), 34px);
+                        min-height: min(max(16px, 2vw), 34px);
                     }
 
                     &.team-2 {
                         position: absolute;
-                        left: 22px;
+                        left: min(max(12px, 1vw), 22px);
                     }
                     
                     img {
@@ -188,7 +229,7 @@
         .action-btns {
             position: relative;
             height: 100%;
-            margin: 0px 18px 0px 24px;
+            margin: 0px 12px 0px 12px;
             display: flex;
             justify-content: space-between;
                       
@@ -219,11 +260,13 @@
                 .score {
                     font-weight: 500;
                     font-size: min(max(12px, 1vw), 17px);
+                    line-height: min(max(12px, 1vw), 17px);
                 }
 
                 .description {
                     font-weight: 600;
                     font-size: min(max(8px, 1vw), 10px);
+                    line-height: min(max(8px, 1vw), 10px);
                     text-transform: capitalize;
                     color: #BDD1C4;
                 }
@@ -258,39 +301,39 @@
                     box-shadow: 1.25333px 1.25333px 2.50667px rgba(91, 22, 146, 0.3), -1.25333px -1.25333px 2.50667px rgba(23, 6, 36, 0.5), inset -1.25333px 1.25333px 2.50667px rgba(23, 6, 36, 0.2), inset 1.25333px -1.25333px 2.50667px rgba(23, 6, 36, 0.2), inset -1.25333px -1.25333px 2.50667px rgba(91, 22, 146, 0.9), inset 1.25333px 1.25333px 3.76px rgba(23, 6, 36, 0.9);
                 }
             }
+        }        
+    }
+
+    .card-action-icons {
+        .is-live {
+            width: 33px;
+            height: 20px;
+            background: linear-gradient(135deg, #1C2027 5.94%, #1E242B 100%);
+            box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 13px;
+            text-transform: capitalize;
+            color: #CF2121;
         }
-        
-        .card-action-icons {
-            .is-live {
-                width: 33px;
-                height: 20px;
-                background: linear-gradient(135deg, #1C2027 5.94%, #1E242B 100%);
-                box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
-                border-radius: 5px;
-                font-weight: 600;
-                font-size: 10px;
-                line-height: 13px;
-                text-transform: capitalize;
-                color: #CF2121;
-            }
 
-            .actions {
-                width: 33px;
-                height: calc(100% - 20px);
+        .actions {
+            width: 33px;
+            height: calc(100% - 20px);
 
-                .material-icons {
-                    width: 20px;
-                    height: 20px;
-                    font-size: 14px;
-                    margin: 4px 0px;
-                    background-color: #166130;
-                    border-radius: 50%;
-                    color: #20232A;
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+            .material-icons {
+                width: min(max(11px, 1vw), 20px);
+                height: min(max(11px, 1vw), 20px);
+                font-size: min(max(8px, 1vw), 14px);
+                margin: 4px 0px;
+                background-color: #166130;
+                border-radius: 50%;
+                color: #20232A;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }

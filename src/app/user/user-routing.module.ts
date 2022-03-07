@@ -17,6 +17,7 @@ const routes: Routes = [
         path: '/:tab',
         component: DashboardComponent
       },
+      { path: 'cricket', redirectTo: 'cricket/all', pathMatch: 'full' },
       {
         path: 'cricket',
         component: CricketComponent

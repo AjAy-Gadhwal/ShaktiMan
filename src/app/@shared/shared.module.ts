@@ -11,6 +11,7 @@ import { CricketCardComponent } from "./components/cricket-card/cricket-card.com
 import { MatchCardComponent } from "./components/match-card/match-card.component";
 import { ScoreCardComponent } from "./components/score-card/score-card.component";
 import { SubNavComponent } from './components/sub-nav/sub-nav.component';
+import { MatchScoreModalComponent } from './components/match-score-modal/match-score-modal.component';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
     ScoreCardComponent,
     SubNavComponent,
     CricketCardComponent,
-    BestSlipCardComponent
+    BestSlipCardComponent,
+    MatchScoreModalComponent,
+    MatchScoreModalComponent
   ],
   imports: [
     CommonModule,    
@@ -59,7 +62,8 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
     ScoreCardComponent,
     SubNavComponent,
     CricketCardComponent,
-    BestSlipCardComponent
+    BestSlipCardComponent,
+    MatchScoreModalComponent
   ]
 })
 export class SharedModule { }

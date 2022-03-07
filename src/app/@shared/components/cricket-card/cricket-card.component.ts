@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatchScoreModalComponent } from '../match-score-modal/match-score-modal.component';
 
 @Component({
   selector: 'app-cricket-card',
@@ -8,9 +10,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CricketCardComponent implements OnInit {
 
   @Input() isLive: boolean=false;
-  constructor() { }
+  
+  constructor(
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit(): void {
   }
 
+  openMatchScoreModal(): void {
+    const modalRef = this.modalService.open(MatchScoreModalComponent, { modalDialogClass: 'match-score-modal' });
+    modalRef.componentInstance.name = 'World';
+  }
 }

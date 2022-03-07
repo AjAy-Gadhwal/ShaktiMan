@@ -36,13 +36,13 @@ export class CricketComponent implements OnInit {
   }
 
   subNavTabs = {
-    'cricket/all': "All",
-    'cricket/match-odds': "Match Odds",
-    'cricket/bookmaker': "Bookmaker",
-    'cricket/fancy': "Fancy",
-    'cricket/player': "Player",
-    'cricket/wicket': "Wicket",
-    'cricket/bowler-session': "Bowler Session",
+    '/cricket/all': "All",
+    '/cricket/match-odds': "Match Odds",
+    '/cricket/bookmaker': "Bookmaker",
+    '/cricket/fancy': "Fancy",
+    '/cricket/player': "Player",
+    '/cricket/wicket': "Wicket",
+    '/cricket/bowler-session': "Bowler Session",
   }
   
   constructor(
