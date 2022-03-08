@@ -1,6 +1,6 @@
 <div class="cricket d-flex w-100">
     <div class="left-panel" >
-        <div class="carousel-and-tabs" >
+        <div class="carousel-and-actions" >
             <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-casino" >
                 <ng-template carouselSlide>
                     <img src="../../../assets/images/casino.png" alt="">
@@ -16,75 +16,99 @@
                 </ng-template>                    
             </owl-carousel-o>  
         
-            <div class="carousel-actions" >
-                <div class="tab" >
-                    <div class="area" >
-                        <div class="title" >Free Bet Club</div>
-                        <div class="description" >Free Bet Club</div>
+            <div class="carousel-actions d-flex flex-column justify-content-start align-items-center" >
+                <div class="d-flex justify-content-between align-items-center w-100 p-2 pb-0" >
+                    <div class="d-flex justify-content-start align-items-center w-25" >
+                        <div class="action-btn" >
+                            <span class="material-icons">computer</span>
+                        </div>
+                    </div>    
+
+                    <div class="d-flex flex-column justify-content-center align-items-center" >
+                        <div class="w-100 text-center" >world Cup 2022</div>
+                        <span class="w-100 text-center" >THU</span>
+                    </div>
+                    
+                    <div class="d-flex justify-content-end align-items-center w-25" >
+                        <div class="action-btn" >
+                            <span class="material-icons">add_circle_outline</span>
+                        </div>   
+                        
+                        <div class="action-btn ms-2" >
+                            <span class="material-icons">insights</span>
+                        </div>   
                     </div>
                 </div>
-        
-                <div class="tab" >
-                    <div class="area" >
-                        <div class="title" >Free Bet Club</div>
-                        <div class="description" >Free Bet Club</div>
+
+                <div class="d-flex justify-content-center align-items-center w-100 px-2 vs-match" >
+                    <div class="team-btn d-flex justify-content-end align-items-center w-50 pe-4" >
+                        <img src="/assets/images/batball.svg" alt="" class="img"  />
+                        
+                        <div class="circle" >
+                            <img src="../../../assets/images/kkr.png" alt="">
+                        </div>
+                        <div class="d-none d-md-block" >KOLKATA KNIGHT RIDERS</div>
+                        <div class="d-block d-md-none" >KKR</div>
+                    </div>    
+
+                    <div class="d-flex flex-column justify-content-center align-items-center vs" >
+                        VS
+                    </div>
+
+                    <div class="team-btn d-flex justify-content-start align-items-center w-50 ps-4" >
+                        <div class="d-none d-md-block" >DELHI CAPITALS</div>
+                        <div class="d-block d-md-none" >DC</div>
+                        <div class="circle" >
+                            <img src="../../../assets/images/dc.png" alt="">
+                        </div>
+                        
+                        <img src="/assets/images/volleyball.svg" alt="" class="img" />
+                    </div>   
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center w-100 counter" >
+                    <div class="d-flex flex-column justify-content-center align-items-center" >
+                        <div class="d-flex justify-content-center align-items-center" >
+                            <div class="count d-flex justify-content-center align-items-center" >0</div>
+                            <div class="count d-flex justify-content-center align-items-center" >2</div>
+                            <div class="divider" >:</div>
+                        </div>
+                        <div class="type">Day</div>
+                    </div>
+
+                    <div class="d-flex flex-column justify-content-center align-items-center" >
+                        <div class="d-flex justify-content-center align-items-center" >
+                            <div class="count d-flex justify-content-center align-items-center" >0</div>
+                            <div class="count d-flex justify-content-center align-items-center" >5</div>
+                            <div class="divider" >:</div>
+                        </div>
+                        <div class="type" >Hours</div>
+                    </div>
+
+                    <div class="d-flex flex-column justify-content-center align-items-center" >
+                        <div class="d-flex justify-content-center align-items-center" >
+                            <div class="count d-flex justify-content-center align-items-center" >3</div>
+                            <div class="count d-flex justify-content-center align-items-center" >4</div>
+                            <div class="divider" >:</div>
+                        </div>
+                        <div class="type">Minutes</div>
+                    </div>
+
+                    <div class="d-flex flex-column justify-content-center align-items-center" >
+                        <div class="d-flex justify-content-center align-items-center" >
+                            <div class="count d-flex justify-content-center align-items-center" >2</div>
+                            <div class="count d-flex justify-content-center align-items-center" >5</div>
+                        </div>
+                        <div class="type">Second</div>
                     </div>
                 </div>
-        
-                <div class="tab" >
-                    <div class="area" >
-                        <div class="title" >Free Bet Club</div>
-                        <div class="description" >Free Bet Club</div>
-                    </div>
-                </div>
-        
-                <div class="tab" >
-                    <div class="area" >
-                        <div class="title" >Free Bet Club</div>
-                        <div class="description" >Free Bet Club</div>
-                    </div>
-                </div>            
             </div>
-        </div>
-
-        <div class="d-flex d-md-none carousel-cards w-100 mb-3" >                
-            <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-score-cards w-100" >
-                <ng-template carouselSlide>
-                    <app-score-card></app-score-card>
-                </ng-template>
-                
-                <ng-template carouselSlide>
-                    <app-score-card></app-score-card>
-                </ng-template>
-
-                <ng-template carouselSlide>
-                    <app-score-card></app-score-card>
-                </ng-template>
-
-                <ng-template carouselSlide>
-                    <app-score-card></app-score-card>
-                </ng-template>
-
-                <ng-template carouselSlide>
-                    <app-score-card></app-score-card>
-                </ng-template>
-            </owl-carousel-o>
         </div>
 
         <app-sub-nav [tabs]="subNavTabs" [isCondition]="false" ></app-sub-nav>
 
         <div class="d-flex flex-column justify-content-center mt-2 pb-5" >
-            <app-cricket-card [isLive]="true" ></app-cricket-card>
-            <app-cricket-card [isLive]="false"></app-cricket-card>
-            <app-cricket-card [isLive]="true"></app-cricket-card>
-            <app-cricket-card [isLive]="true"></app-cricket-card>
-            <app-cricket-card [isLive]="true"></app-cricket-card> 
-            <app-cricket-card [isLive]="false"></app-cricket-card>
-            <app-cricket-card [isLive]="false"></app-cricket-card>             
-            <app-cricket-card [isLive]="false"></app-cricket-card>
-            <app-cricket-card [isLive]="true"></app-cricket-card>            
-            <app-cricket-card [isLive]="true"></app-cricket-card> 
-            <app-cricket-card [isLive]="false"></app-cricket-card>
+            <app-cricket-card [isLive]="item" *ngFor="let item of items" ></app-cricket-card>
         </div>        
     </div>
 

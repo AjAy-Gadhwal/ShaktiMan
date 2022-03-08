@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
 import * as Flickity from "flickity";
 import { OwlOptions } from "ngx-owl-carousel-o";
+import { filter, map } from "rxjs";
 
 @Component({
   selector: 'app-cricket',
@@ -44,9 +46,19 @@ export class CricketComponent implements OnInit {
     '/cricket/wicket': "Wicket",
     '/cricket/bowler-session': "Bowler Session",
   }
+
+  items: any = [];
   
   constructor(
+    private router: Router
   ) {
+    this.items = this.randomArray();
+
+    router.events.subscribe((val) => {
+      if(val instanceof NavigationEnd)  {
+        this.items = this.randomArray();
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -65,5 +77,9 @@ export class CricketComponent implements OnInit {
         friction: 0.15
       });
     }
+  }
+
+  randomArray(): any {
+    return Array(10).fill(Math.random() < 0.5).map(() => Math.round(Math.random() * 10));
   }
 }

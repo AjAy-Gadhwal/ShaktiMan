@@ -36,10 +36,12 @@ export class DashboardComponent implements OnInit {
   }
 
   subNavTabs = {
-    today: "Today",
-    tomorrow: "Tomorrow",
-    inplay: "Inplay"
+    '/dashboard/today': "Today",
+    '/dashboard/tomorrow': "Tomorrow",
+    '/dashboard/inplay': "Inplay"
   }
+
+  activeSlide = 0;
   
   constructor(
   ) {

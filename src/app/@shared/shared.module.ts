@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { NgbPaginationModule, NgbTooltipModule, NgbAccordionModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbPaginationModule, NgbTooltipModule, NgbAccordionModule, NgbNavModule } from "@ng-bootstrap/ng-bootstrap";
 import { NgSelectModule } from "@ng-select/ng-select";
 import { CarouselModule } from "ngx-owl-carousel-o";
 import { NgxTrimDirectiveModule } from "ngx-trim-directive";
@@ -40,6 +40,7 @@ import { SignupModalComponent } from './components/signup-modal/signup-modal.com
     NgbPaginationModule,
     NgbTooltipModule,
     NgbAccordionModule,
+    NgbNavModule,
 
     
     NgSelectModule,
@@ -57,6 +58,7 @@ import { SignupModalComponent } from './components/signup-modal/signup-modal.com
     NgbPaginationModule,
     NgbTooltipModule,
     NgbAccordionModule,
+    NgbNavModule,
 
     NgSelectModule,    
 

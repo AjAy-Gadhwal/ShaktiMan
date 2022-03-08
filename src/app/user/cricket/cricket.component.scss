@@ -9,7 +9,7 @@
                 z-index: 0;
 
                 .owl-carousel .owl-item img {
-                    height: 140px;
+                    height: 160px;
                 }
 
                 .owl-stage-outer  {
@@ -37,53 +37,118 @@
         width: calc(100% - 320px);
         padding: 0px min(max(16px, 2vw), 24px);
 
-        .carousel-and-tabs {
+        .carousel-and-actions {
             position: relative;
             margin-top: 2px;
             margin-bottom: 18px;
+            overflow: hidden;
             
             .carousel-actions {
                 position: absolute;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                height: min(max(30px, 4vw), 49px);
                 box-shadow: 3px 3px 1px 1px rgba(10, 11, 14, 0.9);
-                border-radius: 0px 0px 0px 15px;
+                border-radius: 0px 0px 15px 15px;
                 z-index: 1;
-                bottom: -2px;
-                right: 0;
+                bottom: 0px;
+                right: 0px;
                 width: 100%;
-        
-                .tab {
+                height: 100%;
+                background-color: #00000085;
+                
+
+                .action-btn {
+                    width: min(max(24px, 3vw), 38px);
+                    height: min(max(24px, 3vw), 38px);                    
+                    background: linear-gradient(135deg, #1C2027 0%, #1E242B 100%);
+                    box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
+                    color: #17823C;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+
+                    .material-icons {
+                        font-size: min(max(12px, 2vw), 24px);
+                    }
+                }
+
+                .vs-match {
                     position: relative;
-                    width: min(max(65px, 7vw), 110px);
-                    height: min(max(30px, 4vw), 49px);
-                    right: min(max(14px, 2vw), 24px);
-                    color: white;
-                    filter: drop-shadow(0px 0px 2px rgba(50, 54, 60, 1));
-    
-                    .area {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        width: min(max(80px, 9vw), 134px);
-                        height: min(max(30px, 4vw), 49px);
-                        padding-left: min(max(16px, 2vw), 24px);
-                        background: linear-gradient(134.38deg, #1A1D24 0%, #181B20 109.38%);
-                        clip-path: polygon(0 48%, 18% 0, 30% 0, 100% 0%, 100% 0%, 100% 99%, 100% 99%, 1% 99%);
-    
-                        .title {
-                            font-weight: 600;
-                            font-size: min(max(8px, 1vw), 14px);
-                            line-height: normal;
-                            color: #23B054;
+                    top: -7px;
+
+                    .team-btn {
+
+                        .img {
+                            width: 20px;
+                            height: 20px;
                         }
-                        .description {
-                            font-size: min(max(6px, 1vw), 10px);
-                            line-height: normal;
-                            color: #E2E2E2;
-                        }                  
+
+                        .circle {
+                            width: min(max(40px, 4vw), 60px);
+                            height: min(max(40px, 4vw), 60px);
+                            background: linear-gradient(135deg, #1C2027 0%, #1E242B 100%);
+                            box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
+                            border-radius: 50%;
+                            margin: 0px 12px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                width: 50%;
+                            }
+                        }
+                    }
+
+                    .vs {
+                        position: absolute;
+                        top: 15%;
+                        font-size: min(max(16px, 2vw), 28px);
+                        line-height: 45px;
+                        letter-spacing: -0.01em;
+                        text-transform: capitalize;
+                        color: #23B054;
+                    }
+                }
+
+                .counter {
+                    position: relative;
+                    top: -6px;
+
+                    .count {
+                        width: 20px;
+                        height: 30px;
+                        background: #390E5B;
+                        box-shadow: 0px 5.06122px 12.6531px rgba(0, 0, 0, 0.5);
+                        border-radius: 6.32653px;
+                        font-weight: 600;
+                        font-size: 20.2449px;
+                        line-height: 26px;
+                        letter-spacing: -0.01em;
+                        text-transform: capitalize;
+                        color: #BDD1C4;
+                        margin: 0px 2px;
+                    }
+
+                    .divider {
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 26px;
+                        letter-spacing: -0.01em;
+                        text-transform: capitalize;
+                        color: #BDD1C4;
+                        margin: 0px 2px;
+                    }
+
+                    .type {
+                        font-weight: 500;
+                        font-size: 11px;
+                        line-height: 15px;
+                        letter-spacing: -0.01em;
+                        text-transform: capitalize;
+                        color: #BDD1C4;
                     }
                 }
             }

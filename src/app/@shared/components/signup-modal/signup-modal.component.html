@@ -10,46 +10,67 @@
       </div>
     </div>
     <div class="content">
-      <div class="col-12 carousel-links">
-        <ul class="nav nav-pills " id="pills-tab" role="tablist">
-          <div class="owl_1 owl-carousel owl-theme">
-            <div class="item">
-              <li class="nav-item " role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-              </li>
-            </div>
-            <div class="item">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-              </li>
-            </div>
-            <div class="item">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-              </li>
-            </div>
-            <div class="item">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-              </li>
-            </div>
-            <div class="item">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-              </li>
-            </div>
-          </div>
-        </ul>
+      <div class="col-12 carousel-links mb-4">
+        <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-nav-btns" >                                
+          <ng-template carouselSlide>
+              <button class="tab-btn" [ngClass]="{'active': activeTab === 'profile'}" (click)="activeTab='profile'" >
+                Profile
+              </button>     
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <button class="tab-btn" [ngClass]="{'active': activeTab === 'contact-1'}" (click)="activeTab='contact-1'" >
+              Contact 1
+            </button>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <button class="tab-btn" [ngClass]="{'active': activeTab === 'contact-2'}" (click)="activeTab='contact-2'" >
+              Contact 2
+            </button>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <button class="tab-btn" [ngClass]="{'active': activeTab === 'contact-3'}" (click)="activeTab='contact-3'" >
+              Contact 3
+            </button>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <button class="tab-btn" [ngClass]="{'active': activeTab === 'contact-4'}" (click)="activeTab='contact-4'" >
+              Contact 4
+            </button>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <button class="tab-btn" [ngClass]="{'active': activeTab === 'contact-5'}" (click)="activeTab='contact-5'" >
+              Contact 5
+            </button>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <button class="tab-btn" [ngClass]="{'active': activeTab === 'contact-6'}" (click)="activeTab='contact-6'" >
+              Contact 6
+            </button>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <button class="tab-btn" [ngClass]="{'active': activeTab === 'contact-7'}" (click)="activeTab='contact-7'" >
+              Contact 7
+            </button>
+          </ng-template>
+        </owl-carousel-o>          
       </div>
-      <div class="tab- mt-2" id="pills-tabContent">
+      <!-- <div class="tab- mt-2" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
           <h4 class="text-white">111111</h4> </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
           <h4 class="text-white">2222</h4> </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
           <h4 class="text-white">3333</h4> </div>
-      </div>
-      <form>
+      </div> -->
+
+      <form *ngIf="activeTab === 'profile'" >
         <div class="row align-items-center">
           <div class="col-12 col-md-6">
             <div class="mb-4 form-group">
@@ -90,8 +111,1043 @@
           </div>
         </div>
       </form>
+
+      <form *ngIf="activeTab === 'contact-1'" >
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p class="text-success mb-1 pl-2">chip 1</p>
+            <div class="mb-4 form-group">
+              <label for="" class="form-label">enter your chip name</label>
+              <input type="text" class="form-control" id="" placeholder=""> </div>
+            <div class="row">
+              <div class="co-12 col-md-8">
+                <div class="mb-4 form-group">
+                  <input type="text" class="form-control pt-0" id="" placeholder="Value 10,000"> </div>
+              </div>
+              <div class="co-12 col-md-4">
+                <div class="mb-4 form-group">
+                  <input type="text" class="p-1 form-control " id="" placeholder=""> </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="text-success  mb-1 pl-2">chip 2</p>
+            <div class="mb-4 form-group">
+              <label for="" class="form-label">enter your chip name</label>
+              <input type="text" class="pl-0 form-control " id="" placeholder=""> </div>
+            <div class="row">
+              <div class="co-12 col-md-8">
+                <div class="mb-4 form-group">
+                  <input type="text" class=" form-control pt-0" id="" placeholder="Value 10,000"> </div>
+              </div>
+              <div class="co-12 col-md-4">
+                <div class="mb-4 form-group">
+                  <input type="text" class="p-1 form-control " id="" placeholder=""> </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="text-success  mb-1 pl-2">chip 2</p>
+            <div class="mb-4 form-group">
+              <label for="" class="form-label">enter your chip name</label>
+              <input type="text" class="pl-0 form-control " id="" placeholder=""> </div>
+            <div class="row">
+              <div class="co-12 col-md-8">
+                <div class="mb-4 form-group">
+                  <input type="text" class=" form-control pt-0" id="" placeholder="Value 10,000"> </div>
+              </div>
+              <div class="co-12 col-md-4">
+                <div class="mb-4 form-group">
+                  <input type="text" class="p-1 form-control " id="" placeholder=""> </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="text-success  mb-1 pl-2">chip 2</p>
+            <div class="mb-4 form-group">
+              <label for="" class="form-label">enter your chip name</label>
+              <input type="text" class="pl-0 form-control " id="" placeholder=""> </div>
+            <div class="row">
+              <div class="co-12 col-md-8">
+                <div class="mb-4 form-group">
+                  <input type="text" class=" form-control pt-0" id="" placeholder="Value 10,000"> </div>
+              </div>
+              <div class="co-12 col-md-4">
+                <div class="mb-4 form-group">
+                  <input type="text" class="p-1 form-control " id="" placeholder=""> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form class="recharge-withdraw" *ngIf="activeTab === 'contact-2'" >
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item mr-3" role="presentation">
+                <button class=" nav-link active " id="pills-home" data-bs-toggle="pill" data-bs-target="#pills-ho" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-wallet mr-2"></i> wallet</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="  nav-link" id="pills-profile" data-bs-toggle="pill" data-bs-target="#pills-profi" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-tire-rugged"></i> offers</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 ">
+            <div class="d-flex justify-content-between">
+              <div class="radio-btn">
+                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" checked value="value1">
+                <label for="styled-checkbox-2" class="text-white">Checkbox</label>
+              </div>
+              <div class="radio-btn">
+                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value1">
+                <label for="styled-checkbox-3" class="text-white">Checkbox</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active " id="pills-ho" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+              <div class="col-12 col-md-6 mx-auto">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter amount for deposit</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter promo code</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <p class="text-center text-muted">2% bonus redeemed</p>
+              <p class="text-muted text-center">We accept, process & disburse digital payments for your business</p>
+              <p class="text-success text-center"> Fast & Secure Payment </p>
+              <div class="col-12 col-md-8 col-lg-7 mx-auto">
+                <ul class="list-unstyled d-flex  flex-wrap justify-content-between align-items-center">
+                  <li class="me-2"><img src="assets/images/visa-logo.png"></li>
+                  <li class="me-2"><img src="assets/images/Mastercard.png"></li>
+                  <li class="me-2"><img src="assets/images/Skrill.png"></li>
+                  <li class="me-2"><img src="assets/images/Bitcoin.png"></li>
+                  <li class="me-2"><img src="assets/images/Layer 1 (1).png"></li>
+                  <li class="me-2"><img src="assets/images/payemnt (3).png"></li>
+                  <li class="me-2"><img src="assets/images/payemnt (2).png"></li>
+                  <li class="me-2"><img src="assets/images/payemnt (1).png"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-profi" role="tabpanel" aria-labelledby="pills-profile-tab">.2222..</div>
+        </div>
+      </form>
+
+      <form class="recharge-withdraw" *ngIf="activeTab === 'contact-3'" >
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item mr-3" role="presentation">
+                <button class=" nav-link active " id="pills-home" data-bs-toggle="pill" data-bs-target="#pills-ho" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-wallet mr-2"></i> wallet</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="  nav-link" id="pills-profile" data-bs-toggle="pill" data-bs-target="#pills-profi" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-tire-rugged"></i> offers</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 ">
+            <div class="d-flex justify-content-between">
+              <div class="radio-btn">
+                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value1">
+                <label for="styled-checkbox-2" class="text-white">Checkbox</label>
+              </div>
+              <div class="radio-btn">
+                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" checked value="value1">
+                <label for="styled-checkbox-3" class="text-white">Checkbox</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active " id="pills-ho" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter your bank name*</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter your mobile number*</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter promo code</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter withdrawal amount*</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">branch IFSC Code</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter account holder name</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter description</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">kYC status</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-profi" role="tabpanel" aria-labelledby="pills-profile-tab">.2222..</div>
+        </div>
+      </form>
+
+      <form class="recharge-withdraw" *ngIf="activeTab === 'contact-4'" >
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item mr-3" role="presentation">
+                <button class=" nav-link  " id="pills-home" data-bs-toggle="pill" data-bs-target="#pills-ho" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-wallet mr-2"></i> wallet</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="  nav-link active" id="pills-profile" data-bs-toggle="pill" data-bs-target="#pills-profi" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-tire-rugged"></i> offers</button>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade  " id="pills-ho" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter your bank name*</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter your mobile number*</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter promo code</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter withdrawal amount*</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">branch IFSC Code</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter account holder name</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter description</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">kYC status</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show active" id="pills-profi" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="popup-container">
+                  <div class="popup-content">
+                    <div class="popup-header">
+                      <div class="inner-popup"></div>
+                      <h2 class="cb-date">Redeem Now</h2></div>
+                    <div class="popup-1-radius"></div>
+                    <div class="popup-2-radius"></div>
+                    <div class="popup-3-radius"></div>
+                    <div class="popup-4-radius"></div>
+                    <div class="popup-5-radius"></div>
+                    <div class="popup-6-radius"></div>
+                    <div class="inner-content">
+                      <h1>Get <p >2% Bonus</p> on</h1>
+                      <h1>every deposit</h1>
+                      <h3>Promo Code : F2</h3>
+                      <div class="btn-box">
+                        <button>Rules</button>
+                        <h5>Terms &amp; Condition</h5></div>
+                      <ul>
+                        <li>
+                          <p>5% of your bonus amount can be claimed per bet.</p>
+                        </li>
+                        <li>
+                          <p>Maximum 100 bonus amount can be claimed per bet.</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="popup-container">
+                  <div class="popup-content">
+                    <div class="popup-header">
+                      <div class="inner-popup"></div>
+                      <h2 class="cb-date">Redeem Now</h2></div>
+                    <div class="popup-1-radius"></div>
+                    <div class="popup-2-radius"></div>
+                    <div class="popup-3-radius"></div>
+                    <div class="popup-4-radius"></div>
+                    <div class="popup-5-radius"></div>
+                    <div class="popup-6-radius"></div>
+                    <div class="inner-content">
+                      <h1>Get <p >2% Bonus</p> on</h1>
+                      <h1>every deposit</h1>
+                      <h3>Promo Code : F2</h3>
+                      <div class="btn-box">
+                        <button>Rules</button>
+                        <h5>Terms &amp; Condition</h5></div>
+                      <ul>
+                        <li>
+                          <p>5% of your bonus amount can be claimed per bet.</p>
+                        </li>
+                        <li>
+                          <p>Maximum 100 bonus amount can be claimed per bet.</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="popup-container">
+                  <div class="popup-content">
+                    <div class="popup-header">
+                      <div class="inner-popup"></div>
+                      <h2 class="cb-date">Redeem Now</h2></div>
+                    <div class="popup-1-radius"></div>
+                    <div class="popup-2-radius"></div>
+                    <div class="popup-3-radius"></div>
+                    <div class="popup-4-radius"></div>
+                    <div class="popup-5-radius"></div>
+                    <div class="popup-6-radius"></div>
+                    <div class="inner-content">
+                      <h1>Get <p >2% Bonus</p> on</h1>
+                      <h1>every deposit</h1>
+                      <h3>Promo Code : F2</h3>
+                      <div class="btn-box">
+                        <button>Rules</button>
+                        <h5>Terms &amp; Condition</h5></div>
+                      <ul>
+                        <li>
+                          <p>5% of your bonus amount can be claimed per bet.</p>
+                        </li>
+                        <li>
+                          <p>Maximum 100 bonus amount can be claimed per bet.</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form class="recharge-withdraw"  *ngIf="activeTab === 'contact-5'"  >
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item mr-3" role="presentation">
+                <button class=" nav-link  active" id="pills-home" data-bs-toggle="pill" data-bs-target="#pills-ho" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-wallet mr-2"></i> wallet</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="  nav-link " id="pills-profile" data-bs-toggle="pill" data-bs-target="#pills-profi" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-tire-rugged"></i> offers</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 ">
+            <div class="d-flex justify-content-between">
+              <div class="radio-btn">
+                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value1">
+                <label for="styled-checkbox-2" class="text-white">Checkbox</label>
+              </div>
+              <div class="radio-btn">
+                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" checked value="value1">
+                <label for="styled-checkbox-3" class="text-white">Checkbox</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active " id="pills-ho" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group select-box">
+                  <label>document type*</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="mb-4 form-group">
+                  <label for="" class="form-label">enter your aadhar number*</label>
+                  <input type="text" class="form-control" id="" placeholder=""> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="upload-doc">
+                  <input type="file" name="">
+                  <p class="text-center pt-3">Upload <span class="text-muted">Back Side</span> of your physical document*</p> <img src="assets/images/Group.png"> </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="upload-doc">
+                  <input type="file" name="">
+                  <p class="text-center pt-3">Upload <span class="text-muted">Back Side</span> of your physical document*</p> <img src="assets/images/Group.png"> </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade " id="pills-profi" role="tabpanel" aria-labelledby="pills-profile-tab">.2222..</div>
+        </div>
+      </form>
+
+      <div class="dw-requst" *ngIf="activeTab === 'contact-6'" >
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab-dw" data-bs-toggle="pill" data-bs-target="#pills-home-dw" type="button" role="tab" aria-controls="pills-home" aria-selected="true">all</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab-dw" data-bs-toggle="pill" data-bs-target="#pills-profile-dw" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">deposit</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-contact-tab-dw" data-bs-toggle="pill" data-bs-target="#pills-contact-dw" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">withdrawal</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home-dw" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021 12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021 12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021 12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021 12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-profile-dw" role="tabpanel" aria-labelledby="pills-profile-tab">.
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021  12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021  12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade" id="pills-contact-dw" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021  12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021  12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dw-card">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02 Sep 2021  12:00 PM</p>
+                  </div>
+                  <div class="info">
+                    <h6>Description</h6>
+                    <p>Confirmed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Withdrawal Amt.</h6>
+                    <p>500</p>
+                  </div>
+                  <div class="info">
+                    <h6>Status</h6>
+                    <p>Completed</p>
+                  </div>
+                  <div class="info">
+                    <h6>Date</h6>
+                    <p>02gjhj</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>bank name</h6>
+                    <p>Bank of spain</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank account number</h6>
+                    <p>561564564535</p>
+                  </div>
+                  <div class="info">
+                    <h6>account holder name</h6>
+                    <p>tokyo</p>
+                  </div>
+                  <div class="info">
+                    <h6>bank IFSC Code</h6>
+                    <p>KGJFJ56</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="info">
+                    <h6>Mobile number</h6>
+                    <p>9068809989</p>
+                  </div>
+                  <div class="info">
+                    <h6>transaction type</h6>
+                    <p class="text-danger">withdrawal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="account-statement"  *ngIf="activeTab === 'contact-7'" >
+        <table class="table table-borderless table-responsive-lg">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">market type</th>
+              <th scope="col">sport / game</th>
+              <th scope="col">Dr</th>
+              <th>Cr</th>
+              <th>Balance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+             <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+             <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+             <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+             <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+             <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+             <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+             <tr>
+              <td>14 may 2021
+                <br>12:09 am
+              </td>
+              <td>P/L Market</td>
+              <td>cr</td>
+              <td>0</td>
+              <td>10,000</td>
+              <td>85,025</td>
+              <td>ExchGame/SupernowaGames/Round4267799/Play</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="text-center mt-4">
-        <button type="button" class="btn dark-btn" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn dark-btn" (click)="activeModal.dismiss()">Close</button>
         <button type="button" class="btn text-success bg-transparent">Save</button>
       </div>
     </div>
