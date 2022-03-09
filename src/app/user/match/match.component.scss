@@ -2,62 +2,10 @@
     display: flex;
 }
 
-::ng-deep {
-    .cricket {
-        .left-panel {
-            .owl-carousel-casino {
-                z-index: 0;
-
-                .owl-carousel .owl-item img {
-                    height: 160px;
-                }
-
-                .owl-stage-outer  {
-                    border-radius: 0px 0px 15px 15px;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 768px) { 
-    .cricket {
-        .left-panel {
-            width: calc(100% - 0px) !important;
-        }
-
-        .right-panel { 
-            width: 0px;
-        }
-    }
-}
-
-.cricket {
+.match {
     .left-panel {
-        width: calc(100% - 320px);
-        padding: 0px min(max(16px, 2vw), 24px);
-
-        .carousel-and-actions {
-            position: relative;
-            margin-top: 2px;
-            margin-bottom: 18px;
-            overflow: hidden;
-            
+        .carousel-and-actions {            
             .carousel-actions {
-                position: absolute;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                box-shadow: 3px 3px 1px 1px rgba(10, 11, 14, 0.9);
-                border-radius: 0px 0px 15px 15px;
-                z-index: 1;
-                bottom: 0px;
-                right: 0px;
-                width: 100%;
-                height: 100%;
-                background-color: #00000085;
-                
-
                 .action-btn {
                     width: min(max(24px, 3vw), 38px);
                     height: min(max(24px, 3vw), 38px);                    
@@ -153,10 +101,6 @@
                 }
             }
         }               
-    }
-
-    .right-panel {
-        width: 320px;
     }
 }
 

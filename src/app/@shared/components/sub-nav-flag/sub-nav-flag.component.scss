@@ -1,0 +1,150 @@
+.sub-nav-flag {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    height: min(max(60px, 5vw), 90px);
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1A1D24;
+    box-shadow: -5px 5px 10px rgba(10, 12, 14, 0.2), 5px -5px 10px rgba(10, 12, 14, 0.2), -5px -5px 10px rgba(42, 46, 58, 0.9), 5px 5px 13px rgba(10, 12, 14, 0.9), inset 1px 1px 2px rgba(42, 46, 58, 0.3), inset -1px -1px 2px rgba(10, 12, 14, 0.5);
+    border-radius: 15px;
+    padding: 4px;
+    margin-right: 12px;
+    overflow: hidden;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px transparent;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #000;
+        border-radius: 10px;
+        &:hover {
+            background: #000;
+        }
+    }
+
+    .owl-carousel-flag-btns {
+        .owl-carousel {
+            .owl-stage-outer {
+              z-index: 1;
+            }
+    
+            .owl-stage {
+              .owl-item {
+                width: auto !important;
+      
+                .tab-btn {
+                  width: 112px;
+                  border: none;
+                  height: 52px;
+                  margin: auto;
+                  background: transparent;
+                  color: white;
+                  cursor: pointer;
+                  
+    
+                  &.active {
+                    background: #191C22;
+                    box-shadow: 1px 1px 2px rgb(38 42 51 / 30%), -1px -1px 2px rgb(12 14 17 / 50%), inset -3px 3px 6px rgb(12 14 17 / 20%), inset 3px -3px 6px rgb(12 14 17 / 20%), inset -3px -3px 6px rgb(38 42 51 / 90%), inset 3px 3px 8px rgb(12 14 17 / 90%);
+                    color: #22B455;
+                  }
+                }
+              }
+            }
+      
+            .owl-nav {
+              position: absolute;
+              top: 0;
+              margin: 0;
+              width: 100%;
+              height: min(max(30px, 6vw), 52px);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              z-index: 0;
+              
+              .owl-prev, .owl-next {
+                position: relative;
+                width: 12px;
+                height: 12px;
+                margin: 0;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                color: #23B054;
+              }
+      
+              .owl-prev {
+                left: -24px;
+                background-image: url(/assets/images/less.svg);
+              }
+      
+              .owl-next {
+                right: -24px;
+                background-image: url(/assets/images/greater.svg);
+              }
+            }
+          }
+    }
+
+    .nav-btn {
+        position: relative;
+        
+        .btn {
+            position: relative;
+            font-weight: 500;
+            background-color: transparent;
+            border: 0px;
+            outline: none;                    
+            box-shadow: none;
+            padding: 8px 4px;
+            
+            .circle {
+                width: min(max(25px, 2vw), 45px);
+                height: min(max(25px, 2vw), 45px);                     
+                border-radius: 50%;                      
+
+                img {
+                    width: 70%;
+                }
+            }
+
+            .title {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 9px;
+                line-height: 11px;
+                letter-spacing: -0.01em;
+                text-transform: capitalize;
+                color: #BDD1C4;
+                margin-top: 4px;
+
+                .count {
+                    width: 13px;
+                    height: 13px;
+                    background: #390E5B;
+                    border-radius: 2px;
+                }
+            }
+
+            &.active {                                
+                .circle {
+                    width: min(max(35px, 2.5vw), 58px);
+                    height: min(max(35px, 2.5vw), 58px);                    
+                    background: #1A1D24;
+                    box-shadow: 1px 1px 2px rgba(42, 46, 58, 0.3), -1px -1px 2px rgba(10, 12, 14, 0.5), inset -3px 3px 6px rgba(10, 12, 14, 0.2), inset 3px -3px 6px rgba(10, 12, 14, 0.2), inset -3px -3px 6px rgba(42, 46, 58, 0.9), inset 3px 3px 8px rgba(10, 12, 14, 0.9);
+                    transition: ease-in-out 0.3s;   
+                }
+            }
+        }      
+    }       
+}

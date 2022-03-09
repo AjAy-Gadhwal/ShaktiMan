@@ -1,0 +1,184 @@
+:host {
+    display: flex;
+}
+
+
+.casino {
+    .left-panel {
+        .carousel-and-actions {            
+            .carousel-actions {
+                padding: 12px min(max(12px, 2vw), 48px);
+                .title {
+                    font-family: Cinzel Decorative;
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: min(max(24px, 3vw), 48px);
+                    line-height: normal;
+                    letter-spacing: 0.13em;
+                    text-transform: uppercase;
+                    text-shadow: 0px 4px 10px #000000;                    
+                    
+                    .green {
+                        color: #23B054;
+                    }
+
+                    .white {
+                        color: #FFFFFF;
+                    }
+                }
+
+                .description {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: min(max(12px, 2vw), 20px);
+                    line-height: normal;
+                    letter-spacing: 0.13em;
+                    text-transform: uppercase;                    
+                    color: #FFFFFF;                    
+                    text-shadow: 0px 4px 10px #000000;
+                }
+            }
+        }
+    }
+
+    .popup-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #191C22;
+        
+        .popup-content{
+            width: 176px;
+            height: 176px;
+            background: rgba(58, 61, 73, 0.2);
+            -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(80px);
+            position: relative;
+            margin: 15px 10px;
+            
+            .popup-header{
+                position: absolute;
+                top: -6px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                height: 6px;
+                width: 119px;
+                background: #0F1115;
+                z-index: 1;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+
+                .inner-popup{
+                    position: absolute;
+                    top: 1px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    height: 35px;
+                    width: 110px;
+                    background: linear-gradient(135deg, #191C22 0%, #1B1E26 100%);
+                    box-shadow: -1px 1px 2px rgb(12 13 16 / 20%), 1px -1px 2px rgb(12 13 16 / 20%), -1px -1px 2px rgb(40 45 56 / 90%), 1px 1px 3px rgb(12 13 16 / 90%), inset 1px 1px 2px rgb(40 45 56 / 30%), inset -1px -1px 2px rgb(12 13 16 / 50%);
+                    border-bottom-right-radius: 45px;
+                    border-bottom-left-radius: 45px;
+                    z-index: 2;
+                }
+
+                .cb-date{
+                    position: relative;
+                    z-index: 3;
+                    text-align: center;
+                    margin: 5px 0 0 !important;
+                    font-family: 'Rajdhani',sans-serif;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 23px;
+                    /* identical to box height */
+                    letter-spacing: -0.01em;
+                    text-transform: capitalize;
+                    color: #acacae !important;
+                }
+            }
+
+            img{
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 84px;
+            }
+
+            h2{
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 28px;
+                text-align: center;
+                text-transform: capitalize;
+                color: #ACACAE;
+                width: 100%;
+            }
+            
+            
+            .popup-1-radius{
+                width: 25px;
+                height: 25px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+            }
+            .popup-2-radius{
+                width: 25px;
+                height: 25px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+            }
+            .popup-3-radius{
+                width: 25px;
+                height: 25px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -10px;
+                left: -10px;
+            }
+            .popup-4-radius{
+                width: 25px;
+                height: 25px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -10px;
+                right: -10px;
+            }
+            .popup-5-radius{
+                width: 30px;
+                height: 30px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                top: 53.5%;
+                left: 0%;
+                transform: translate(-50%, -50%);
+            }
+            .popup-6-radius{
+                width: 30px;
+                height: 30px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                top: 53.5%;
+                right: -17%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+

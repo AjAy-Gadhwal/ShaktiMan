@@ -13,7 +13,7 @@ import { SignupModalComponent } from '../@shared/components/signup-modal/signup-
 export class UserComponent implements OnInit {
 
   carouselSlideOptions: OwlOptions = {
-    loop: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
@@ -23,18 +23,9 @@ export class UserComponent implements OnInit {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 0
+        items: 1
       },
       400: {
-        items: 0
-      },
-      740: {
-        items: 3
-      },
-      1200: {
-        items: 3
-      },
-      1201: {
         items: 4
       }
     },

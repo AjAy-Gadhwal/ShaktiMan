@@ -41,6 +41,13 @@ export class DashboardComponent implements OnInit {
     '/dashboard/inplay': "Inplay"
   }
 
+  slides: any = [
+    '../../../assets/images/casino.png',
+    '../../../assets/images/casino.png',
+    '../../../assets/images/casino.png',
+    '../../../assets/images/casino.png'
+  ];
+
   activeSlide = 0;
   
   constructor(

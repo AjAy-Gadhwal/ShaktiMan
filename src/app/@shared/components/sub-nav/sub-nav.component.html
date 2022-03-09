@@ -1,6 +1,6 @@
 <div class="sub-nav" *ngIf="tabs" >
   <div class="nav-btn d-flex justify-content-center align-items-center" [ngClass]="{'is-condition': !isCondition}"  *ngFor="let tab of tabs | keyvalue" >
-      <button class="btn" *ngIf="tab.key" [routerLink]="[tab.key || '']" routerLinkActive="sm-angel-btn active" >
+      <button class="btn" *ngIf="tab.key" [routerLink]="[tab.key || '']" routerLinkActive="active" >
           {{tab?.value}}
       </button>
   </div>

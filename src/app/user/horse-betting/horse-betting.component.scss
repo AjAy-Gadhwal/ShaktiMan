@@ -1,0 +1,180 @@
+:host {
+    display: flex;
+}
+
+.horse-betting {
+    .left-panel {
+        .carousel-and-actions {            
+            .carousel-actions {
+                padding: 12px min(max(12px, 2vw), 48px);
+                .title {
+                    font-family: Cinzel Decorative;
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: min(max(24px, 3vw), 48px);
+                    line-height: normal;
+                    letter-spacing: 0.13em;
+                    text-transform: uppercase;
+                    text-shadow: 0px 4px 10px #000000;                    
+                    
+                    .green {
+                        color: #23B054;
+                    }
+
+                    .white {
+                        color: #FFFFFF;
+                    }
+                }
+
+                .description {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: min(max(12px, 2vw), 20px);
+                    line-height: normal;
+                    letter-spacing: 0.13em;
+                    text-transform: uppercase;                    
+                    color: #FFFFFF;                    
+                    text-shadow: 0px 4px 10px #000000;
+                }
+            }
+        }
+    }
+    
+    .sub-navs {
+        
+    }    
+    
+    .popup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #191C22;
+    
+        .popup-content {
+            width: 100%;
+            max-width: 95vw;
+            border-radius: 15px;
+            background: rgba(58, 61, 73, 0.2);
+            -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(80px);
+            position: relative;
+            margin: 15px 10px;
+            
+            .popup-1-radius {
+                width: 30px;
+                height: 30px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                top: -10px;
+                left: 60px;
+                z-index: 99;
+            }
+           
+            .popup-3-radius {
+                width: 30px;
+                height: 30px;
+                background: #191C22;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -10px;
+                left: 60px;
+                z-index: 99;
+            }
+            
+            .popup-card {
+                position: relative;
+                display: flex;
+                width: 350px;
+                height: 125px;
+                max-width: 100%;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 68px;
+                    top: 18px;
+                    width: 15px;
+                    height: 90px;
+                    z-index: 9;
+                    background: #22262D;
+                    box-shadow: 1px 1px 2px #262C34, -1px -1px 2px rgba(13, 19, 14, 0.5), inset -1px 1px 2px rgba(13, 19, 14, 0.2), inset 1px -1px 2px rgba(13, 19, 14, 0.2), inset -1px -1px 2px #2C333A, inset 1px 1px 3px rgba(13, 19, 14, 0.9);
+                }
+                .card-left {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 70px;
+                    max-width: 100%;
+                    height: 125px;
+                    .card-left-inner {
+                        background: linear-gradient(135deg, #1C2027 0%, #1E242B 100%);
+                        box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
+                        width: 38px;
+                        height: 38px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        img {
+                            margin-top: 5px;
+                            width: 30px;
+                        }
+                    }
+                }
+                .card-right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 270px;
+                    max-width: 100%;
+                    margin-left: 14px;
+                    text-align: center;
+                    padding: 14px;
+                    .card-content {
+                        h3 {
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 15px;
+                            text-transform: capitalize;
+                            color: #BDD1C4;
+                            margin-bottom: 8px !important;
+                        }
+                        .cb-col {
+                            width: 220px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            p {
+                                margin: 2px 4px !important;
+                                width: min(max(30px, 3vw), 45px);
+                                height: 30px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-weight: 600;
+                                font-size: 11px;
+                                line-height: 14px;
+                                letter-spacing: -0.01em;
+                                text-transform: capitalize;
+                                color: #23B054;
+                                background: #1E252A;
+                                box-shadow: -1px 1px 2px rgba(12, 15, 17, 0.2), 1px -1px 2px rgba(12, 15, 17, 0.2), -1px -1px 2px rgba(48, 59, 67, 0.9), 1px 1px 3px rgba(12, 15, 17, 0.9), inset 1px 1px 2px rgba(48, 59, 67, 0.3), inset -1px -1px 2px rgba(12, 15, 17, 0.5);
+                            }
+                        }
+                        .cb-col.col-1 {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}    
+
+
+
+
+
+

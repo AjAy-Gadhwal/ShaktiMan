@@ -16,15 +16,6 @@
         letter-spacing: -0.01em;
         text-transform: capitalize;
         color: #656768;        
-        border-right: 18px solid transparent;
-
-        &.green {
-            border-color: #23B054;
-        }
-
-        &.pink {
-            border-color: #A854EB;
-        }
 
 		&::before, &::after {
 			position: absolute;
@@ -35,6 +26,7 @@
 			border-radius: 50%;
 			top: calc((30px / 2) * -1);
 			left: calc(30% - (48px / 2));
+            z-index: 2;
 		}
 		&::after {
 			top: auto;
@@ -58,8 +50,34 @@
 	}
 
 	.details {
+        position: relative;
         width: calc(100% - 30%);
         padding: 8px  16px;
+        
+        &.green {
+            &::before {
+                background: #1D2A1F;
+                box-shadow: 1px 1px 2px rgba(45, 65, 48, 0.3), -1px -1px 2px rgba(13, 19, 14, 0.5), inset -1px 1px 2px rgba(13, 19, 14, 0.2), inset 1px -1px 2px rgba(13, 19, 14, 0.2), inset -1px -1px 2px rgba(45, 65, 48, 0.9), inset 1px 1px 3px rgba(13, 19, 14, 0.9);
+            }
+        }
+        
+        &.pink {
+            &::before {
+                background: #390E5A;
+                box-shadow: 1px 1px 2px rgba(45, 65, 48, 0.3), -1px -1px 2px rgba(13, 19, 14, 0.5), inset -1px 1px 2px rgba(13, 19, 14, 0.2), inset 1px -1px 2px rgba(13, 19, 14, 0.2), inset -1px -1px 2px rgba(45, 65, 48, 0.9), inset 1px 1px 3px rgba(13, 19, 14, 0.9);
+            }
+        }
+
+        &::before {
+			position: absolute;
+			content: '';
+            left: -15px;
+            top: 0;
+            width: 15px;
+            height: 100%;
+            z-index: 1;
+            
+		}
 
         .type {
             width: 29px;

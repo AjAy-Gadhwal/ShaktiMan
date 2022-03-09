@@ -8,8 +8,8 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
-  { path: 'casino', component: CasinoComponent },
-  { path: 'promotion', component: PromotionComponent },
+  { path: 'casinos', component: CasinoComponent },
+  { path: 'old-promotion', component: PromotionComponent },
   { path: 'horsebetting', component: HorsebettingComponent },
   { path: 'horsebetting2', component: HorsebettingsecondComponent },
   {

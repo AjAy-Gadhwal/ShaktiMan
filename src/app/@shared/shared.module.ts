@@ -14,6 +14,8 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
 import { MatchScoreModalComponent } from './components/match-score-modal/match-score-modal.component';
 import { LoginModalComponent } from './components/login-modal/login-modal.component';
 import { SignupModalComponent } from './components/signup-modal/signup-modal.component';
+import { MainContainerCarouselComponent } from './components/main-container-carousel/main-container-carousel.component';
+import { SubNavFlagComponent } from "./components/sub-nav-flag/sub-nav-flag.component";
 
 
 @NgModule({
@@ -21,12 +23,14 @@ import { SignupModalComponent } from './components/signup-modal/signup-modal.com
     MatchCardComponent,
     ScoreCardComponent,
     SubNavComponent,
+    SubNavFlagComponent,
     CricketCardComponent,
     BestSlipCardComponent,
     MatchScoreModalComponent,
     MatchScoreModalComponent,
     LoginModalComponent,
-    SignupModalComponent
+    SignupModalComponent,
+    MainContainerCarouselComponent
   ],
   imports: [
     CommonModule,    
@@ -67,11 +71,13 @@ import { SignupModalComponent } from './components/signup-modal/signup-modal.com
     MatchCardComponent,
     ScoreCardComponent,
     SubNavComponent,
+    SubNavFlagComponent,
     CricketCardComponent,
     BestSlipCardComponent,
     MatchScoreModalComponent,
     LoginModalComponent,
-    SignupModalComponent
+    SignupModalComponent,
+    MainContainerCarouselComponent
   ]
 })
 export class SharedModule { }

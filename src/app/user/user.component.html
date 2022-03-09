@@ -1,64 +1,80 @@
-<nav class="sm-topnav navbar navbar-expand navbar-dark">
-    <div class="d-flex justify-content-between align-items-center w-100">
-        <div class="d-flex justify-content-start align-items-center left-menu-panel">
-            <a class="navbar-brand p-0 d-flex justify-content-center" >
-                <div class="main-logo d-flex justify-content-center align-items-center" [routerLink]="['/']"  >
-                    <div>S</div>
-                    <div>M</div>
-                </div>
-            </a>
-        
-            <div class="input-group d-none d-md-flex flex-column justify-content-center align-items-center search-box">
-                <div class="input-group-prepend d-flex justify-content-center align-items-center">
-                    <span class="input-group-text">
-                        <img src="/assets/images/search.svg" alt="" srcset="">            
-                    </span>
-                </div>
-                <input type="text" placeholder="Search Here" class="form-control" />
+<nav class="sm-topnav navbar navbar-expand navbar-dark d-flex justify-content-between align-items-center w-100">
+    <div class="d-flex justify-content-start align-items-center left-menu-panel">
+        <a class="navbar-brand p-0 d-flex justify-content-center" >
+            <div class="main-logo d-flex justify-content-center align-items-center" [routerLink]="['/']"  >
+                <div>S</div>
+                <div>M</div>
             </div>
-
-            <button class="btn btn-link btn-sm toggle-btn d-block d-lg-none" id="sidebarToggle" (click)="toggleSidebar($event)" >
-                <img src="/assets/images/bar-menu.svg" alt="" srcset="">            
-            </button>
+        </a>
+    
+        <div class="input-group d-none d-md-flex flex-column justify-content-center align-items-center search-box">
+            <div class="input-group-prepend d-flex justify-content-center align-items-center">
+                <span class="input-group-text">
+                    <img src="/assets/images/search.svg" alt="" srcset="">            
+                </span>
+            </div>
+            <input type="text" placeholder="Search Here" class="form-control" />
         </div>
 
-        <div class="d-none d-lg-flex justify-content-center align-items-center nav-btns">
-            <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-nav-btns" >                                
-                <ng-template carouselSlide>
-                    <button class="sm-angel-btn" routerLink="/fulltoz" routerLinkActive="active">
-                        Fulltoz
-                    </button>     
-                </ng-template>
+        <button class="btn btn-link btn-sm toggle-btn d-block d-lg-none" id="sidebarToggle" (click)="toggleSidebar($event)" >
+            <img src="/assets/images/bar-menu.svg" alt="" srcset="">            
+        </button>
+    </div>
 
-                <ng-template carouselSlide>
-                    <button class="sm-angel-btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                        Sports
-                    </button>
-                </ng-template>
+    <div class="d-none d-lg-flex justify-content-center align-items-center nav-btns">
+        <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-nav-btns" >                                
+            <ng-template carouselSlide>
+                <button class="sm-angel-btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    Sports
+                </button>
+            </ng-template>
 
-                <ng-template carouselSlide>
-                    <button class="sm-angel-btn" routerLink="/casino" routerLinkActive="active">
-                        Casino
-                    </button>
-                </ng-template>
+            <ng-template carouselSlide>
+                <button class="sm-angel-btn" routerLink="/match" routerLinkActive="active">
+                    Match
+                </button>
+            </ng-template>
 
-                <ng-template carouselSlide>
-                    <button class="sm-angel-btn" routerLink="/inplay" routerLinkActive="active">
-                        Inplay
-                    </button>
-                </ng-template>
-            </owl-carousel-o>  
-        </div>
+            <ng-template carouselSlide>
+                <button class="sm-angel-btn" routerLink="/casino" routerLinkActive="active">
+                    Casino
+                </button>
+            </ng-template>
 
-        <div class="d-flex justify-content-end align-items-center action-btns right-menu-panel">
-            <button class="btn btn-link" (click)="openLoginModal()">
-                Log in
-            </button>   
+            <ng-template carouselSlide>
+                <button class="sm-angel-btn" routerLink="/horse-betting" routerLinkActive="active">
+                    Horse Betting
+                </button>     
+            </ng-template>
 
-            <button class="sm-btn ms-4 me-4" (click)="openSignupModal()">
-                Sign up
-            </button>   
-        </div>
+            <ng-template carouselSlide>
+                <button class="sm-angel-btn" routerLink="/promotion" routerLinkActive="active">
+                    Promotion
+                </button>     
+            </ng-template>            
+            
+            <ng-template carouselSlide>
+                <button class="sm-angel-btn" routerLink="/fulltoz" routerLinkActive="active">
+                    Fulltoz
+                </button>     
+            </ng-template>
+
+            <ng-template carouselSlide>
+                <button class="sm-angel-btn" routerLink="/inplay" routerLinkActive="active">
+                    Inplay
+                </button>
+            </ng-template>
+        </owl-carousel-o>  
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center action-btns right-menu-panel">
+        <button class="btn btn-link" (click)="openLoginModal()">
+            Log in
+        </button>   
+
+        <button class="sm-btn ms-4 me-4" (click)="openSignupModal()">
+            Sign up
+        </button>   
     </div>        
 </nav>
 

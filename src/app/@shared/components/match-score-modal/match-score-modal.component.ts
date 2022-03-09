@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-match-score-modal',
@@ -8,13 +7,15 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MatchScoreModalComponent implements OnInit {
 
-  @Input() name='';
+  @Output() onClose = new EventEmitter<string>();
 
   constructor(
-    public activeModal: NgbActiveModal
   ) { }
 
   ngOnInit(): void {
   }
 
+  onCloseModal(): void {
+    this.onClose.emit();
+  }
 }

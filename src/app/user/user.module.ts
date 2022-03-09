@@ -3,19 +3,30 @@ import { SharedModule } from '../@shared/shared.module';
 import { UserRoutingModule } from './user-routing.module';
 
 import { UserComponent } from './user.component';
-import { CricketComponent } from './cricket/cricket.component';
+import { MatchComponent } from './match/match.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RightPanelComponent } from './dashboard/right-panel/right-panel.component';
-import { CricketRightPanelComponent } from './cricket/cricket-right-panel/cricket-right-panel.component';
-
+import { DashboardRightPanelComponent } from './dashboard/dashboard-right-panel/dashboard-right-panel.component';
+import { MatchRightPanelComponent } from './match/match-right-panel/match-right-panel.component';
+import { CasinoComponent } from './casino/casino.component';
+import { CasinoRightPanelComponent } from './casino/casino-right-panel/casino-right-panel.component';
+import { HorseBettingComponent } from './horse-betting/horse-betting.component';
+import { HorseBettingRightPanelComponent } from './horse-betting/horse-betting-right-panel/horse-betting-right-panel.component';
+import { PromotionComponent } from './promotion/promotion.component';
+import { PromotionRightPanelComponent } from './promotion/promotion-right-panel/promotion-right-panel.component';
 
 @NgModule({
   declarations: [
     UserComponent,
     DashboardComponent,
-    RightPanelComponent,
-    CricketComponent,
-    CricketRightPanelComponent
+    DashboardRightPanelComponent,
+    MatchComponent,
+    MatchRightPanelComponent,
+    CasinoComponent,
+    CasinoRightPanelComponent,
+    HorseBettingComponent,
+    HorseBettingRightPanelComponent,
+    PromotionComponent,
+    PromotionRightPanelComponent
   ],
   imports: [
     SharedModule,    

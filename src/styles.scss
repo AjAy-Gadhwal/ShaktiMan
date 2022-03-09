@@ -273,7 +273,7 @@ body {
 
   .nav-btns {
     .owl-carousel-nav-btns {
-      width: 500px !important;
+      width: 667px !important;
       max-width: 100%;
 
       @media (max-width: 1200px) { 
@@ -286,14 +286,11 @@ body {
         }
 
         .owl-stage {
-          .owl-item {
-            width: auto !important;
-  
+          .owl-item {  
             .sm-angel-btn {
-              width: 112px;
-              height: 52px;
+              height: 40px;
               max-height: 100%;
-              margin: 0px 6px;
+              margin: auto;
             }
           }
         }
@@ -303,7 +300,7 @@ body {
           top: 0;
           margin: 0;
           width: 100%;
-          height: min(max(30px, 6vw), 52px);
+          height: 100%;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -846,11 +843,13 @@ button[ng-reflect-app-btnloader] {
   text-transform: capitalize;
   color: #C7C7C7;
   margin: auto;
+  transition: ease-in-out 0.3s;
 
   &.active {
     background: #191C22;
     box-shadow: 1px 1px 2px rgb(38 42 51 / 30%), -1px -1px 2px rgb(12 14 17 / 50%), inset -3px 3px 6px rgb(12 14 17 / 20%), inset 3px -3px 6px rgb(12 14 17 / 20%), inset -3px -3px 6px rgb(38 42 51 / 90%), inset 3px 3px 8px rgb(12 14 17 / 90%) !important;
     color: #22B455 !important;
+    transition: ease-in-out 0.3s;
   }
 }
 

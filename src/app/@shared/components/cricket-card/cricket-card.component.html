@@ -4,7 +4,7 @@
             Match Odds
         </div>  
 
-        <span class="material-icons close-icon d-flex justify-content-center align-items-center">close</span>
+        <span class="material-icons close-icon d-flex justify-content-center align-items-center" (click)="onCloseCard()" >close</span>
 
         <div class="d-flex flex-column justify-content-center align-items-center" >
             <div class="card-action-icons d-block d-sm-none" >
@@ -70,42 +70,44 @@
             </div>
 
             <div class="d-flex justify-content-center align-items-center h-100" >
-                <div class="d-flex flex-column justify-content-between align-items-center h-100" >
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center active" (click)="openMatchScoreModal()" > 
-                        <div class="score" >1.65</div>
-                        <div class="description" >552215</div>
+                <div class="d-none d-md-flex justify-content-center align-items-center h-100 me-1"  >
+                    <div class="d-flex flex-column justify-content-between align-items-center h-100" >
+                        <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()" > 
+                            <div class="score" >1.65</div>
+                            <div class="description" >552215</div>
+                        </div> 
+                        
+                        <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >1.65</div>
+                            <div class="description" >552215</div>
+                        </div>
+                        
+                        <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >1.65</div>
+                            <div class="description" >552215</div>
+                        </div> 
                     </div> 
-                    
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >1.65</div>
-                        <div class="description" >552215</div>
+    
+                    <div class="d-flex flex-column justify-content-between align-items-center h-100" >
+                        <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >3.05</div>
+                            <div class="description" >552215</div>
+                        </div> 
+                        
+                        <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >3.05</div>
+                            <div class="description" >552215</div>
+                        </div> 
+    
+                        <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >3.05</div>
+                            <div class="description" >552215</div>
+                        </div> 
                     </div> 
+                </div>
 
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >1.65</div>
-                        <div class="description" >552215</div>
-                    </div> 
-                </div> 
-
-                <div class="d-flex flex-column justify-content-between align-items-center h-100" >
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >3.05</div>
-                        <div class="description" >552215</div>
-                    </div> 
-                    
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >3.05</div>
-                        <div class="description" >552215</div>
-                    </div> 
-
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >3.05</div>
-                        <div class="description" >552215</div>
-                    </div> 
-                </div> 
-
-                <div class="d-flex flex-column justify-content-between align-items-center h-100" >
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                <div class="d-flex flex-column justify-content-between align-items-center h-100 bid" >
+                    <div class="green-btn d-flex flex-column justify-content-center align-items-center active" (click)="openMatchScoreModal()">
                         <div class="score" >1.65</div>
                         <div class="description" >3.76 L</div>
                     </div> 
@@ -122,57 +124,60 @@
                 </div> 
             </div>        
     
-            <div class="d-flex justify-content-center align-items-center h-100" >            
-                <div class="d-flex flex-column justify-content-between align-items-center h-100" >
+            <div class="d-flex justify-content-center align-items-center h-100" >         
+                <div class="d-flex flex-column justify-content-between align-items-center h-100 bid" >
                     <div class="pink-btn d-flex flex-column justify-content-center align-items-center active" (click)="openMatchScoreModal()">
                         <div class="score" >3.05</div>
                         <div class="description" >3.76 L</div>
                     </div> 
                     
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                    <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
                         <div class="score" >3.05</div>
                         <div class="description" >3.76 L</div>
                     </div> 
 
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                    <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
                         <div class="score" >3.05</div>
                         <div class="description" >3.76 L</div>
                     </div> 
                 </div> 
 
-                <div class="d-flex flex-column justify-content-between align-items-center h-100" >
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >1.65</div>
-                        <div class="description" >552215</div>
+                <div class="d-none d-md-flex justify-content-center align-items-center h-100 ms-1"  >
+                    <div class="d-flex flex-column justify-content-between align-items-center h-100" >
+                        <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >1.65</div>
+                            <div class="description" >552215</div>
+                        </div> 
+                        
+                        <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >1.65</div>
+                            <div class="description" >552215</div>
+                        </div> 
+
+                        <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >1.65</div>
+                            <div class="description" >552215</div>
+                        </div> 
                     </div> 
                     
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >1.65</div>
-                        <div class="description" >552215</div>
+                    <div class="d-flex flex-column justify-content-between align-items-center h-100" >
+                        <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >3.05</div>
+                            <div class="description" >552215</div>
+                        </div> 
+                        
+                        <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >3.05</div>
+                            <div class="description" >552215</div>
+                        </div> 
+    
+                        <div class="pink-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
+                            <div class="score" >3.05</div>
+                            <div class="description" >552215</div>
+                        </div> 
                     </div> 
+                </div>   
 
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >1.65</div>
-                        <div class="description" >552215</div>
-                    </div> 
-                </div> 
-
-                <div class="d-flex flex-column justify-content-between align-items-center h-100" >
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >3.05</div>
-                        <div class="description" >552215</div>
-                    </div> 
-                    
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >3.05</div>
-                        <div class="description" >552215</div>
-                    </div> 
-
-                    <div class="green-btn d-flex flex-column justify-content-center align-items-center" (click)="openMatchScoreModal()">
-                        <div class="score" >3.05</div>
-                        <div class="description" >552215</div>
-                    </div> 
-                </div> 
             </div>        
         </div>
 

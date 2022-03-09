@@ -9,7 +9,7 @@
 .cricket-card {	
     width: max-content;
     max-width: 100%;
-    height: min(max(170px, 10vw), 224px);
+    height: min(max(170px, 15vw), 210px);
 	background: rgba(62, 65, 75, 0.2);
     backdrop-filter: blur(80px);
     border-radius: 18px;
@@ -70,6 +70,7 @@
             border-radius: 50%;
             font-size: min(max(5px, 1vw), 10px);
             text-align: center;
+            cursor: pointer;
         }
 
         .details {
@@ -252,7 +253,8 @@
                     background: #000;
                 }
             }
-                      
+
+            
             .match-suspended {
                 position: absolute;
                 width: 100%;
@@ -269,9 +271,36 @@
                 padding: min(8px, 3vw, 12px);
             }
     
+            .bid {
+                .green-btn, .pink-btn {
+                    width: min(max(38px, 4.2vw), 74px);
+                    height: min(max(32px, 3.2vw), 48px);
+                }
+
+                .green-btn {
+                    background: #1D2A1F;
+                    box-shadow: -1.36101px 1.36101px 2.72203px rgba(23, 6, 36, 0.2), 1.36101px -1.36101px 2.72203px rgba(23, 130, 60, 0.2), 1.36101px 1.36101px 4.08304px rgba(23, 6, 36, 0.5), inset 1.36101px 1.36101px 2.72203px rgba(35, 176, 84, 0.3), inset -1.36101px -1.36101px 2.72203px rgba(23, 6, 36, 0.5);
+
+                    &.active {
+                        background: #1D2A1F;
+                        box-shadow: 1.25333px 1.25333px 2.50667px rgba(46, 67, 50, 0.3), -1.25333px -1.25333px 2.50667px rgba(12, 17, 12, 0.5), inset -1.25333px 1.25333px 2.50667px rgba(12, 17, 12, 0.2), inset 1.25333px -1.25333px 2.50667px rgba(12, 17, 12, 0.2), inset -1.25333px -1.25333px 2.50667px rgba(46, 67, 50, 0.9), inset 1.25333px 1.25333px 3.76px rgba(12, 17, 12, 0.9);
+                    }
+                }
+
+                .pink-btn {
+                    background: #390E5A;
+                    box-shadow: -1.37931px 1.37931px 2.75862px rgba(23, 6, 36, 0.2), 1.37931px -1.37931px 2.75862px rgba(23, 6, 36, 0.2), -1.37931px -1.37931px 2.75862px rgba(91, 22, 144, 0.9), 1.37931px 1.37931px 4.13793px rgba(23, 6, 36, 0.9), inset 1.37931px 1.37931px 2.75862px rgba(91, 22, 144, 0.3), inset -1.37931px -1.37931px 2.75862px rgba(23, 6, 36, 0.5);
+
+                    &.active {
+                        background: #390E5B;
+                        box-shadow: 1.25333px 1.25333px 2.50667px rgba(91, 22, 146, 0.3), -1.25333px -1.25333px 2.50667px rgba(23, 6, 36, 0.5), inset -1.25333px 1.25333px 2.50667px rgba(23, 6, 36, 0.2), inset 1.25333px -1.25333px 2.50667px rgba(23, 6, 36, 0.2), inset -1.25333px -1.25333px 2.50667px rgba(91, 22, 146, 0.9), inset 1.25333px 1.25333px 3.76px rgba(23, 6, 36, 0.9);
+                    }
+                }
+            }
+
             .green-btn, .pink-btn {
-                width: min(max(32px, 3vw), 67px);
-                height: min(max(28px, 2vw), 43px);
+                width: min(max(32px, 4vw), 67px);
+                height: min(max(28px, 3vw), 43px);
                 font-weight: 400;
                 border-radius: 2px;                  
                 margin: 0px 5px 0px 5px;

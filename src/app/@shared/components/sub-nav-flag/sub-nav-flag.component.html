@@ -1,0 +1,18 @@
+<div class="sub-nav-flag" *ngIf="tabs" >
+    <div class="nav-btn d-flex justify-content-center align-items-center" *ngFor="let tab of tabs" >
+        <button class="btn d-flex flex-column justify-content-center align-items-center" [routerLink]="[tab.link || '']" routerLinkActive="active" >
+            <div class="circle d-flex justify-content-center align-items-center" >
+                <img [src]="tab.flag" alt="" srcset="">
+            </div>
+  
+            <div class="title d-flex justify-content-center align-items-center" >
+                {{tab.title}}
+                <div class="count ms-1 d-flex justify-content-center align-items-center" >{{tab.count}}</div>
+            </div>
+        </button>
+    </div>
+    <!-- <owl-carousel-o [options]="carouselSlideOptions" class="owl-carousel-flag-btns" >                                
+        <ng-template carouselSlide *ngFor="let tab of tabs" >
+        </ng-template>
+    </owl-carousel-o> -->
+</div>
