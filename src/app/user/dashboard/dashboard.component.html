@@ -79,8 +79,20 @@
         </div>
 
         <div class="d-flex d-md-none carousel-cards w-100" >
-            <div class="carousel w-100">
-                <div class="carousel-cell w-100">
+                <owl-carousel-o [options]="CardcarouselSlideOptions" class="owl-carousel-score-cards w-100" style="z-index: 1;" >
+                    <ng-template carouselSlide>
+                    <app-match-card></app-match-card>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <app-match-card></app-match-card>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <app-match-card></app-match-card>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <app-match-card></app-match-card>
+                    </ng-template>   
+                <!--<div class="carousel-cell w-100">
                     <app-match-card></app-match-card>
                 </div>
                 <div class="carousel-cell">
@@ -118,9 +130,12 @@
                 </div>            
                 <div class="carousel-cell">
                     <app-match-card></app-match-card>
-                </div>                    
-            </div>
+                </div>-->     
+            </owl-carousel-o>               
         </div>
+
+
+        <app-footer></app-footer>
     </div>
 
     <div class="right-panel d-none d-md-block" >

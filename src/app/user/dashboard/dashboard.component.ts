@@ -10,17 +10,20 @@ import { OwlOptions } from "ngx-owl-carousel-o";
 export class DashboardComponent implements OnInit {
 
   carouselSlideOptions: OwlOptions = {
+    center: true,
     loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
     dots: false,
     autoplay: true,
-    navSpeed: 1500,
+    navSpeed: 1000,
     navText: ['', ''],
+    //margin:-100,
+    stagePadding: 43,
     responsive: {
       0: {
-        items: 1
+        items:1
       },
       400: {
         items: 1
@@ -30,6 +33,36 @@ export class DashboardComponent implements OnInit {
       },
       940: {
         items: 1
+      }
+    },
+    nav: false
+  }
+
+  CardcarouselSlideOptions: OwlOptions = {
+    center: true,
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    autoplay: false,
+    navSpeed: 1000,
+    navText: ['', ''],
+    //margin:0,
+    stagePadding: 37,
+    responsive: {
+      0: {
+        items:1
+      },
+      400: {
+        
+        items: 1
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 3
       }
     },
     nav: false

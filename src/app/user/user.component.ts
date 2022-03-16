@@ -34,37 +34,37 @@ export class UserComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private modalService: NgbModal
+    // private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {    
   }
 
-  toggleSidebar(event: MouseEvent): void {
-    event.preventDefault();
-    document.body.classList.toggle('sm-sidenav-toggled');
-    localStorage.setItem('sm|sidebar-toggle', document.body.classList.contains('sm-sidenav-toggled').toString());
-  }
+  // toggleSidebar(event: MouseEvent): void {
+  //   event.preventDefault();
+  //   document.body.classList.toggle('sm-sidenav-toggled');
+  //   localStorage.setItem('sm|sidebar-toggle', document.body.classList.contains('sm-sidenav-toggled').toString());
+  // }
 
-  closeSidebar(event: MouseEvent): void {
-    event.preventDefault();
-    document.body.classList.remove('sm-sidenav-toggled');
-    localStorage.setItem('sm|sidebar-toggle', document.body.classList.contains('sm-sidenav-toggled').toString());
-  }
+  // closeSidebar(event: MouseEvent): void {
+  //   event.preventDefault();
+  //   document.body.classList.remove('sm-sidenav-toggled');
+  //   localStorage.setItem('sm|sidebar-toggle', document.body.classList.contains('sm-sidenav-toggled').toString());
+  // }
 
-  logout(): void {
-  }
+  // logout(): void {
+  // }
 
   openComponent(route: string): void {
     console.log('route : ', route);    
     this.router.navigateByUrl(route);
   }
 
-  openLoginModal(): void {
-    const modalRef = this.modalService.open(LoginModalComponent, { modalDialogClass: 'sm-modal', size: 'lg' });
-  }
+  // openLoginModal(): void {
+  //   const modalRef = this.modalService.open(LoginModalComponent, { modalDialogClass: 'sm-modal', size: 'lg' });
+  // }
 
-  openSignupModal(): void {
-    const modalRef = this.modalService.open(SignupModalComponent, { modalDialogClass: 'sm-modal', size: 'lg' });
-  }
+  // openSignupModal(): void {
+  //   const modalRef = this.modalService.open(SignupModalComponent, { modalDialogClass: 'sm-modal', size: 'lg' });
+  // }
 }

@@ -277,6 +277,7 @@ body {
     .owl-carousel-nav-btns {
       width: 667px !important;
       max-width: 100%;
+      padding: 5px;
 
       @media (max-width: 1200px) { 
         width: 400px !important;
@@ -293,6 +294,9 @@ body {
               height: 40px;
               max-height: 100%;
               margin: auto;
+              white-space: nowrap;
+              padding: auto;
+              //border: 0.5px solid #212529;
             }
           }
         }
@@ -834,7 +838,7 @@ button[ng-reflect-app-btnloader] {
   width: min(max(66px, 7vw), 112px);
   height: min(max(30px, 3vw), 52px);
   background: #191C22;
-  box-shadow: -5px 5px 10px rgba(12, 13, 16, 0.2), 5px -5px 10px rgba(12, 13, 16, 0.2), -5px -5px 10px rgba(38, 43, 52, 0.9), 5px 5px 13px rgba(12, 13, 16, 0.9), inset 1px 1px 2px rgba(38, 43, 52, 0.3), inset -1px -1px 2px rgba(12, 13, 16, 0.5);
+  box-shadow: -1.42308px 1.42308px 2.84615px rgba(12, 15, 17, 0.2), 1.42308px -1.42308px 2.84615px rgba(12, 15, 17, 0.2), -1.42308px -1.42308px 2.84615px rgba(48, 59, 67, 0.9), 1.42308px 1.42308px 4.26923px rgba(12, 15, 17, 0.9), inset 1.42308px 1.42308px 2.84615px rgba(48, 59, 67, 0.3), inset -1.42308px -1.42308px 2.84615px rgba(12, 15, 17, 0.5);
   // clip-path: polygon(15% 0%, 85% 5%, 95% 90%, 5% 100%);
   display: flex;
   justify-content: center;
@@ -862,7 +866,7 @@ button[ng-reflect-app-btnloader] {
   position: relative;
   width: auto;
   height: min(max(35px, 2vw), 53px);
-  background: linear-gradient(135deg, #1C2027 0%, #1E242B 100%);
+  background: linear-gradient(135deg, #198754 0%, #198754 100%);
   box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
   border-radius: 5px;
   font-weight: 600;
@@ -871,7 +875,7 @@ button[ng-reflect-app-btnloader] {
   letter-spacing: 0.02em;
   border: 0px;
   text-transform: capitalize;
-  color: #22B455;
+  color: white;
   padding: 4px 16px;
 }
 
@@ -1806,3 +1810,6 @@ button[ng-reflect-app-btnloader] {
   }
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

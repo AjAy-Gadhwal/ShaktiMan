@@ -13,6 +13,8 @@ import { HorseBettingComponent } from './horse-betting/horse-betting.component';
 import { HorseBettingRightPanelComponent } from './horse-betting/horse-betting-right-panel/horse-betting-right-panel.component';
 import { PromotionComponent } from './promotion/promotion.component';
 import { PromotionRightPanelComponent } from './promotion/promotion-right-panel/promotion-right-panel.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PromotionRightPanelComponent } from './promotion/promotion-right-panel/
     HorseBettingComponent,
     HorseBettingRightPanelComponent,
     PromotionComponent,
-    PromotionRightPanelComponent
+    PromotionRightPanelComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     SharedModule,    

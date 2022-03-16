@@ -5,19 +5,47 @@
 	// flex: 1;
 	flex-direction: column;
 }
-
+.notify_icn[_ngcontent-wml-c93] {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: -3px;
+    top: -3px;
+    border-radius: 50%;
+    color: #073617;
+    font-weight: 600;
+    line-height: 13px;
+    font-size: 9px;
+    background: #23B054 !important;
+}
+.title_team_left{
+         width: 100px;; 
+         margin-right: 10;
+         left: 0;  
+         padding-right: 15px;
+         text-align: center;
+}
+.title_team_right{
+         width: 100px;; 
+         margin-left: 10;  
+         right: 0;
+         padding-left: 15px;
+         text-align: center;
+}
 .match-card {	
     position: relative;
-    width: 273px;
-    height: 287px;
-	background: rgba(58, 61, 73, 0.2);
+    width: 338px;
+    height: 100%;
+    border: 1px solid rgb(42 46 58 / 90%);
+    background: rgba(58, 61, 73, 0.2);
     backdrop-filter: blur(80px);
-    margin: 18px 6px 6px 16px;
-    
+    margin: 18px 18px 18px 16px;
+    background-image: linear-gradient(to bottom right, #8000800a, #0080000a);
+    padding-bottom: 10px;
     &::before, &::after {
 		position: absolute;
 		top: 20px;
-		left: 16px;
+		left: 50px;
 		content: "";
 		width: 34px;
 		height: 34px;
@@ -30,7 +58,7 @@
 	}
 	&::after {
         left: auto;
-		right: 16px;
+		right: 50px;
 		background-image: url(../../../../assets/images/tv.svg);		
 	}
 
@@ -126,6 +154,8 @@
         margin-top: 56px;
         
         .team {
+            position: relative;
+            margin: 8px 0 8px !important;
             .circle {
                 background: linear-gradient(135deg, #1C2027 0%, #1E242B 100%);
                 box-shadow: -1px 1px 2px rgba(12, 14, 16, 0.2), 1px -1px 2px rgba(12, 14, 16, 0.2), -1px -1px 2px rgba(46, 54, 66, 0.9), 1px 1px 3px rgba(12, 14, 16, 0.9), inset 1px 1px 2px rgba(46, 54, 66, 0.3), inset -1px -1px 2px rgba(12, 14, 16, 0.5);
@@ -146,8 +176,9 @@
                 color: #BDD1C4;
             }
         }
-
-        .vs-panel {            
+       
+        .vs-panel { 
+            margin-top: 4px;           
             img {
                 width: 16px;
             }
@@ -163,16 +194,21 @@
                 font-weight: 500;
                 letter-spacing: 1px;
                 color: #7D7E7D;
+                // white-space: nowrap;
+                width: 90px;
+                margin: 2px;
+                text-align: center;
+                margin-top: -7px;
             }
         }
     }
 
     .bet-section {
         height: 34px;
-        background: #1E252A;
-        box-shadow: -1px 1px 2px rgba(12, 15, 17, 0.2), 1px -1px 2px rgba(12, 15, 17, 0.2), -1px -1px 2px rgba(48, 59, 67, 0.9), 1px 1px 3px rgba(12, 15, 17, 0.9), inset 1px 1px 2px rgba(48, 59, 67, 0.3), inset -1px -1px 2px rgba(12, 15, 17, 0.5);
+      //  background: #1E252A;
+      //  box-shadow: -1px 1px 2px rgba(12, 15, 17, 0.2), 1px -1px 2px rgba(12, 15, 17, 0.2), -1px -1px 2px rgba(48, 59, 67, 0.9), 1px 1px 3px rgba(12, 15, 17, 0.9), inset 1px 1px 2px rgba(48, 59, 67, 0.3), inset -1px -1px 2px rgba(12, 15, 17, 0.5);
         padding: 6px;
-        margin-top: 14px;
+        margin-top: 10px;
         margin-bottom: 2px;
 
         div {
@@ -191,8 +227,8 @@
     .pl-section {
         display: flex;
         width: 100%;
-        justify-content: space-between;
-        padding: 0 46px;
+        justify-content: space-around;
+        padding: 0 26px;
       
         p {
             padding: 4px 12px;
@@ -202,7 +238,7 @@
         }
         h2 {
             font-size: 14px;
-            margin-top: 4px;
+            margin-top: -5px;
             margin-bottom: 4px !important;
             color: #fff;
             font-family: 'Rajdhani', sans-serif;
@@ -213,12 +249,14 @@
             width: 48px;
             height: 26px;
             font-weight: 400;
-            border-radius: 2px;                  
+            border-radius: 2px;  
+            border: none;  
+            margin: auto;              
         }
 
         .green-btn {
-            background: #1D2A1F;
-            color: #23B054;
+            background: #12691f;
+            color: #ffffff;
             margin-bottom: 8px;
             box-shadow: -1px 1px 2px rgba(12, 15, 17, 0.2), 1px -1px 2px rgba(12, 15, 17, 0.2), -1px -1px 2px rgba(48, 67, 52, 0.9), 1px 1px 3px rgba(12, 15, 17, 0.9), inset 1px 1px 2px rgba(48, 59, 67, 0.3), inset -1px -1px 2px rgba(12, 15, 17, 0.5);
 
@@ -229,8 +267,8 @@
         }
 
         .pink-btn {
-            background: #390E5A;
-            color: #A954EB;
+            background: #57267c;
+            color: #ffffff;
             box-shadow: -1px 1px 2px rgba(23, 6, 36, 0.2), 1px -1px 2px rgba(23, 6, 36, 0.2), -1px -1px 2px rgba(91, 22, 144, 0.9), 1px 1px 3px rgba(23, 6, 36, 0.9), inset 1px 1px 2px rgba(91, 22, 144, 0.3), inset -1px -1px 2px rgba(23, 6, 36, 0.5);
 
             &.active {
