@@ -2,31 +2,30 @@
 <app-header></app-header>
 
 <div class="sm-bottom-bar d-flex d-md-none" style="z-index: 2;">
-    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center active">
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center" [ngClass]="{'sm-current active': currentRoute === '/'}" (click)="onClickBottomMenu('/')" >
         <img src="/assets/images/basket-ball.svg" alt="" />   
         <div>Sports</div>   
     </a>
 
-    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center">
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center" [ngClass]="{'sm-current active': currentRoute === '/match'}" (click)="onClickBottomMenu('/match')">
         <img src="/assets/images/basket-ball.svg" alt="" />      
-        <div>Inplay</div>   
-    </a>
+        <div>Match</div>   
+    </a>   
 
-    <a class="sm-menu-item sm-center d-flex flex-column justify-content-center align-items-center">
-        <img src="/assets/images/basket-ball.svg" alt="" />      
-        <div>Inplay</div>   
+    <a class="sm-nav-indicator"></a>
 
-        <a class="sm-nav-indicator"></a>
-    </a>
-
-
-    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center" routerLink="/casino" routerLinkActive="active">
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center" [ngClass]="{'sm-current active': currentRoute === '/casino'}" (click)="onClickBottomMenu('/casino')">
         <img src="/assets/images/basket-ball.svg" alt="" />      
         <div>Casino</div>   
     </a>
 
-    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center">
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center" [ngClass]="{'sm-current active': currentRoute === '/horse-betting'}" (click)="onClickBottomMenu('/horse-betting')">
         <img src="/assets/images/basket-ball.svg" alt="" />      
-        <div>Profile</div>   
+        <div>Horse</div>   
+    </a>
+
+    <a class="sm-menu-item d-flex flex-column justify-content-center align-items-center" [ngClass]="{'sm-current active': currentRoute === '/promotion'}" (click)="onClickBottomMenu('/promotion')">
+        <img src="/assets/images/basket-ball.svg" alt="" />      
+        <div>Promotion</div>   
     </a>
 </div>
