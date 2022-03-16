@@ -81,6 +81,8 @@ body {
     transition: ease-in-out 0.3s;
 
 
+    scrollbar-color: #000 transparent;
+    scrollbar-width: thin;
     &::-webkit-scrollbar {
       width: 2px;
     }
@@ -640,6 +642,8 @@ body {
 }
 
 .scrollbar {
+  scrollbar-color: #000 transparent;
+  scrollbar-width: thin;
   &::-webkit-scrollbar {
     width: 2px;
   }
